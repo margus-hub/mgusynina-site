@@ -1,0 +1,22 @@
+{
+  "title": "Инструменты",
+  "intro": "Не просто знаю названия систем — использую их как часть бизнес-процесса.",
+  "groups": [
+    {
+      "name": "Analytics & Marketing",
+      "items": ["Calltouch", "Smartis", "Яндекс Метрика", "Google Analytics", "Avito", "Auto.ru", "RocketData"]
+    },
+    {
+      "name": "CRM & Business",
+      "items": ["Bitrix24", "CRM", "1С", "Excel", "ЭДО"]
+    },
+    {
+      "name": "Content & Design",
+      "items": ["Adobe Photoshop", "Illustrator", "InDesign", "CorelDraw"]
+    },
+    {
+      "name": "Web",
+      "items": ["CMS / сайты", "SEO", "лендинги", "лид-формы", "контент"]
+    }
+  ]
+}
