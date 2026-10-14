@@ -1,0 +1,154 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Настройки сайта"
+    files:
+      - name: "general"
+        label: "Контакты и футер"
+        file: "content/settings.json"
+        fields:
+          - { name: "site_title", label: "Заголовок сайта", widget: "string" }
+          - { name: "site_description", label: "Описание", widget: "text" }
+          - { name: "footer_eyebrow", label: "Надпись над заголовком", widget: "string" }
+          - { name: "footer_title", label: "Заголовок в футере", widget: "string" }
+          - { name: "footer_text", label: "Текст в футере", widget: "text" }
+          - { name: "footer_city", label: "Город", widget: "string" }
+          - { name: "footer_phone", label: "Телефон", widget: "string" }
+          - { name: "footer_email", label: "Email", widget: "string" }
+          - { name: "footer_telegram", label: "Telegram", widget: "string" }
+          - { name: "footer_copyright", label: "Копирайт", widget: "string" }
+
+  - name: "hero"
+    label: "Первый экран"
+    files:
+      - name: "hero"
+        label: "Hero"
+        file: "content/hero.json"
+        fields:
+          - { name: "eyebrow", label: "Надзаголовок", widget: "string" }
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "lead", label: "Подзаголовок", widget: "text" }
+          - { name: "note", label: "Заметка", widget: "text" }
+          - { name: "button1_text", label: "Кнопка 1: текст", widget: "string" }
+          - { name: "button1_link", label: "Кнопка 1: ссылка", widget: "string" }
+          - { name: "button2_text", label: "Кнопка 2: текст", widget: "string" }
+          - { name: "button2_link", label: "Кнопка 2: ссылка", widget: "string" }
+
+  - name: "about"
+    label: "Обо мне"
+    files:
+      - name: "about"
+        label: "Блок 'Обо мне'"
+        file: "content/about.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "stats"
+            label: "Статистика"
+            widget: "list"
+            fields:
+              - { name: "value", label: "Цифра", widget: "string" }
+              - { name: "label", label: "Подпись", widget: "string" }
+
+  - name: "method"
+    label: "Метод работы"
+    files:
+      - name: "method"
+        label: "Как я работаю"
+        file: "content/method.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "steps"
+            label: "Шаги"
+            widget: "list"
+            fields:
+              - { name: "number", label: "Номер", widget: "string" }
+              - { name: "title", label: "Название", widget: "string" }
+              - { name: "description", label: "Описание", widget: "text" }
+          - { name: "quote", label: "Цитата", widget: "text" }
+          - { name: "quote_note", label: "Примечание к цитате", widget: "text" }
+
+  - name: "pillars"
+    label: "Что я меняю"
+    files:
+      - name: "pillars"
+        label: "Pillars"
+        file: "content/pillars.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "items"
+            label: "Карточки"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Название", widget: "string" }
+              - { name: "description", label: "Описание", widget: "text" }
+
+  - name: "tools"
+    label: "Инструменты"
+    files:
+      - name: "tools"
+        label: "Tools"
+        file: "content/tools.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "groups"
+            label: "Группы инструментов"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Название группы", widget: "string" }
+              - { name: "items", label: "Инструменты", widget: "list" }
+
+  - name: "experience"
+    label: "Опыт работы"
+    files:
+      - name: "experience"
+        label: "Все места работы"
+        file: "content/experience.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "items"
+            label: "Места работы"
+            widget: "list"
+            fields:
+              - { name: "company", label: "Компания", widget: "string" }
+              - { name: "role", label: "Должность", widget: "string" }
+              - { name: "period", label: "Период", widget: "string" }
+              - { name: "description", label: "Описание", widget: "text" }
+
+  - name: "education"
+    label: "Образование"
+    files:
+      - name: "education"
+        label: "Образование"
+        file: "content/education.json"
+        fields:
+          - { name: "title", label: "Заголовок", widget: "string" }
+          - { name: "intro", label: "Вступление", widget: "text" }
+          - name: "items"
+            label: "Пункты"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Название", widget: "string" }
+              - { name: "description", label: "Описание", widget: "string" }
+
+  - name: "cases"
+    label: "Кейсы"
+    folder: "content/cases"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Заголовок", widget: "string" }
+      - { name: "company", label: "Компания", widget: "string" }
+      - { name: "period", label: "Период", widget: "string" }
+      - { name: "order", label: "Порядок", widget: "number", default: 99 }
+      - { name: "body", label: "Содержание", widget: "markdown" }
