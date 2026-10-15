@@ -118,7 +118,7 @@ header {
 }
 
 .hero-photo img {
-  width: 350px; height: 450px; object-fit: cover; border-radius: var(--radius-lg); display: block;
+  width: 350px; height: 450px; object-fit: cover; object-position: center top; border-radius: var(--radius-lg); display: block; background: var(--bg-soft);
 }
 
 .hero-content {
@@ -135,7 +135,7 @@ header {
 .hero-role {
   font-size: clamp(18px, 1.8vw, 22px);
   color: var(--text-soft);
-  max-width: 620px; margin: 0 auto 36px;
+  max-width: 620px; margin: 0 0 36px;
   line-height: 1.45; letter-spacing: -0.015em;
 }
 
@@ -507,6 +507,7 @@ footer a:hover { text-decoration: underline; }
     width: 100%;
     max-width: 350px;
     height: auto;
+    aspect-ratio: 7 / 9;
     margin: 0 auto;
   }
   .hero-role { margin-left: auto; margin-right: auto; }
