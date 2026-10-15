@@ -3,19 +3,31 @@
   const burger = document.querySelector('.burger');
   const navLinks = document.querySelector('.nav-links');
   if (!burger || !navLinks) return;
-
+  
+// Открывать/закрывать меню при клике на бургер
   burger.addEventListener('click', function () {
     burger.classList.toggle('open');
     navLinks.classList.toggle('open');
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
 
+  // Закрывать меню при клике на ссылку
   navLinks.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       burger.classList.remove('open');
       navLinks.classList.remove('open');
       document.body.style.overflow = '';
     });
+  });
+
+  // Закрывать меню при клике вне его
+  document.addEventListener('click', function (e) {
+    if (!navLinks.classList.contains('open')) return;
+    if (navLinks.contains(e.target)) return;
+    if (burger.contains(e.target)) return;
+    burger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
   });
 })();
 
