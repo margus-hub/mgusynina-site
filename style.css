@@ -108,24 +108,39 @@ header {
 
 /* ===== HERO ===== */
 .hero {
-  padding: 120px 24px 80px;
+  padding: 100px 24px 80px;
   max-width: var(--max); margin: 0 auto;
-  text-align: center;
 }
+
+.hero-inner {
+  display: grid; grid-template-columns: 350px 1fr; gap: 64px; align-items: center; 
+  margin-bottom: 64px;
+}
+
+.hero-photo img {
+  width: 350px; height: 450px; object-fit: cover; border-radius: var(--radius-lg); display: block;
+}
+
+.hero-content {
+  max-width: 100%;
+}
+
 .hero-tagline {
   font-size: 13px; letter-spacing: -0.01em; color: var(--muted);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
-.hero h1 { margin-bottom: 32px; letter-spacing: -0.03em; }
-.hero h1 .accent { color: var(--accent); }
+
+.hero h1 { margin-bottom: 24px; letter-spacing: -0.03em; }
+
 .hero-role {
-  font-size: clamp(19px, 2.2vw, 24px);
+  font-size: clamp(18px, 1.8vw, 22px);
   color: var(--text-soft);
-  max-width: 720px; margin: 0 auto 48px;
-  line-height: 1.42; letter-spacing: -0.015em;
+  max-width: 620px; margin: 0 auto 36px;
+  line-height: 1.45; letter-spacing: -0.015em;
 }
+
 .hero-actions {
-  display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+  display: flex; gap: 16px; flex-wrap: wrap;
 }
 
 /* ===== BUTTONS ===== */
@@ -483,6 +498,19 @@ footer a:hover { text-decoration: underline; }
   .to-top { bottom: 20px; right: 20px; width: 44px; height: 44px; }
 
   .lead { font-size: 19px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-photo img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .hero-role { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
 }
 
 @media (max-width: 480px) {
