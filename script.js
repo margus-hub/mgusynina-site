@@ -10,7 +10,6 @@
     document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Закрывать меню при клике на ссылку
   navLinks.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', function () {
       burger.classList.remove('open');
