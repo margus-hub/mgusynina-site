@@ -429,7 +429,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px 60px;
-  margin-top: 56px;
+  margin-top: 48px;
 }
 .program-group-title {
   font-size: 13px;
@@ -437,7 +437,7 @@ header {
   color: var(--accent);
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 .program-list {
   display: flex;
