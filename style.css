@@ -653,6 +653,68 @@ footer a:hover { text-decoration: underline; }
 .reveal { opacity: 0; transform: translateY(20px); transition: all .9s var(--ease); }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* ===== CASE TEXT ===== */
+.case-text {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.case-text h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+.case-text p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin: 0 0 12px;
+}
+.case-text p:last-child {
+  margin-bottom: 0;
+}
+.case-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== CASE LINKS ===== */
+.case-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 980px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  transition: all .2s var(--ease);
+}
+.case-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.case-link svg {
+  transition: transform .2s var(--ease);
+}
+.case-link:hover svg {
+  transform: translateX(3px);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .container, .container-wide { padding: 72px 24px; }
