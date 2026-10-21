@@ -674,17 +674,16 @@ footer a:hover { text-decoration: underline; }
   color:#fff; 
   border-radius:var(--radius-lg); 
   padding:48px; 
-  display: flex; /* Убирает разрывы */
-  align-items: center;
+  display: block; /* Убираем flex, который может ломать строки */
 }
 .quote-panel p { 
-  color:#fff; 
-  font-size:clamp(20px,2.5vw,28px); 
-  line-height:1.5; /* Увеличили межстрочный интервал */
-  margin:0; 
-  max-width:900px; 
+  color: #fff !important; /* Принудительно белый цвет */
+  font-size: clamp(20px, 2.5vw, 28px); 
+  line-height: 1.5; 
+  margin: 0; 
+  max-width: 900px; 
   font-weight: 500; 
-  text-align: left; /* Выравнивание по левому краю */
+  text-align: left; 
 }
 
 /* УВЕЛИЧИВАЕМ ЗАГОЛОВКИ СЕКЦИЙ */
