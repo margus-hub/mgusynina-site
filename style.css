@@ -390,7 +390,7 @@ tr:hover td { background: rgba(0, 113, 227, 0.04); }
 /* ===== CTA ===== */
 .cta-banner {
   background: var(--bg-dark); color: #fff; border-radius: var(--radius-lg);
-  padding: 72px 48px; text-align: center; margin: 0 auto; max-width: 1200px;
+  padding: 72px 48px; text-align: center; margin: 64px auto 0; max-width: 1200px;
 }
 .cta-banner h2 { color: #fff; margin-bottom: 16px; }
 .cta-banner p {
