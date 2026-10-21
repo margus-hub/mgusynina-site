@@ -614,3 +614,65 @@ footer a:hover { text-decoration: underline; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { justify-content: center; }
 }
+
+/* ===== VYSTAVKI CUSTOM STYLES ===== */
+
+/* Панель с результатом (×5) */
+.metric-panel { 
+  display:grid; grid-template-columns:1fr 1.2fr; gap:32px; align-items:center; 
+  background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius-lg); 
+  padding:36px; margin: 40px 0; 
+}
+.metric-number { color:var(--accent); font-size:clamp(56px,7vw,84px); font-weight:700; line-height:.95; letter-spacing:-.06em; }
+.metric-title { font-size:20px; color:var(--text); font-weight:600; line-height:1.3; margin-top:16px; }
+.metric-note { color:var(--muted); font-size:14px; line-height:1.5; margin:10px 0 0; }
+
+.metric-compare { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.compare-box { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px; }
+.compare-box .small { font-size:13px; color:var(--muted); margin-bottom:8px; }
+.compare-box .big { font-size:clamp(32px,4vw,48px); font-weight:700; color:var(--text); line-height:1; letter-spacing:-.03em; margin-bottom: 4px; }
+.compare-box.highlight { border-color:rgba(48,100,220,.3); box-shadow:0 8px 24px rgba(30,70,130,.08); }
+.compare-box.highlight .big { color:var(--accent); }
+
+/* Галерея на 4 фото (для Выставок) */
+.gallery-item img { width:100%; height:220px; object-fit:cover; display:block; border-radius:var(--radius); background:var(--bg-soft); }
+.gallery-caption { font-size:13px; color:var(--muted); margin-top:10px; }
+
+/* Универсальная сетка 3 в ряд для карточек */
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top: 24px; }
+.card { 
+  background: var(--bg-soft); 
+  border-radius: var(--radius-lg); 
+  padding: 32px 28px; 
+  transition: transform .3s var(--ease); 
+}
+.card:hover { transform: translateY(-4px); }
+.card-num { font-size:13px; font-weight:600; color:var(--accent); margin-bottom:16px; text-transform:uppercase; letter-spacing:0.05em; }
+.card-num.text-accent { font-size: clamp(28px,3vw,36px); font-weight:700; letter-spacing:-0.03em; text-transform:none; }
+.card h3 { font-size:20px; margin-bottom:12px; line-height:1.2; color: var(--text); }
+.card p { font-size:15px; color:var(--text-soft); line-height:1.55; margin:0; }
+.card-list { padding-left:20px; color:var(--text-soft); font-size:14px; line-height:1.5; margin-top: 12px; }
+.card-list li { margin-bottom: 6px; }
+
+/* Схема процесса (5 шагов со стрелками) */
+.process-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin: 40px 0; }
+.process-step { position:relative; background:var(--bg-soft); border-radius:var(--radius); padding:24px 20px; }
+.process-step .num { font-size:12px; font-weight:700; color:var(--accent); margin-bottom:12px; }
+.process-step h3 { font-size:16px; margin-bottom:8px; color: var(--text); }
+.process-step p { font-size:13px; color:var(--text-soft); line-height:1.5; margin:0; }
+.process-step:not(:last-child)::after { content:"→"; position:absolute; right:-14px; top:50%; transform:translate(50%,-50%); color:var(--accent); font-size:20px; z-index:2; background: #fff; border-radius: 50%; width: 28px; height: 28px; display: grid; place-items: center; }
+
+/* Темный блок с цитатой */
+.quote-panel { margin-top:40px; background:var(--bg-dark); color:#fff; border-radius:var(--radius-lg); padding:48px; }
+.quote-panel p { color:#fff; font-size:clamp(20px,2.5vw,28px); line-height:1.4; margin:0; max-width:900px; font-weight: 500; }
+
+/* Адаптив для новых блоков */
+@media (max-width: 900px) {
+  .grid-3, .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-step:not(:last-child)::after { display: none; }
+  .metric-panel { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .grid-3, .process-grid, .gallery, .metric-compare { grid-template-columns: 1fr; }
+  .quote-panel, .metric-panel, .card { padding: 24px; }
+}
