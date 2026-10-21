@@ -476,6 +476,26 @@ footer a:hover { text-decoration: underline; }
 .case-text p:last-child { margin-bottom: 0; }
 .case-text strong { color: var(--text); font-weight: 600; }
 
+/* ===== CASE PAGE HEADER (Заголовки внутри кейсов) ===== */
+.container-wide > .eyebrow {
+  margin-top: 40px;
+}
+.container-wide > h1 {
+  font-size: clamp(32px, 5vw, 56px); /* Уменьшаем размер, чтобы не орало */
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+.container-wide > .lead {
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--muted);
+  margin-bottom: 56px; /* Отделяем лид от метрики */
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--line); /* Тонкая линия-разделитель */
+  max-width: 800px;
+}
+
 /* ===== CASE LINKS ===== */
 .case-links {
   display: flex; flex-wrap: wrap; gap: 12px;
