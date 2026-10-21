@@ -476,21 +476,21 @@ footer a:hover { text-decoration: underline; }
 .case-text p:last-child { margin-bottom: 0; }
 .case-text strong { color: var(--text); font-weight: 600; }
 
-/* ===== CASE PAGE HEADER (Заголовки внутри кейсов) ===== */
-.container-wide > .eyebrow {
+/* ===== CASE PAGE HEADER (Только для внутренних страниц кейсов) ===== */
+.case-page .eyebrow {
   margin-top: 40px;
 }
-.container-wide > h1 {
+.case-page h1 {
   font-size: clamp(32px, 5vw, 56px); /* Уменьшаем размер, чтобы не орало */
   line-height: 1.1;
   letter-spacing: -0.03em;
   margin-bottom: 24px;
   max-width: 900px;
 }
-.container-wide > .lead {
+.case-page .lead {
   font-size: clamp(18px, 2vw, 22px);
   color: var(--muted);
-  padding-bottom: 32px; /* Просто отступ до цифры */
+  margin-bottom: 32px; /* Расстояние от текста до цифры (метрики) */
   max-width: 800px;
 }
 
