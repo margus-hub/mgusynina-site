@@ -490,9 +490,7 @@ footer a:hover { text-decoration: underline; }
 .container-wide > .lead {
   font-size: clamp(18px, 2vw, 22px);
   color: var(--muted);
-  margin-bottom: 56px; /* Отделяем лид от метрики */
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--line); /* Тонкая линия-разделитель */
+  padding-bottom: 32px; /* Просто отступ до цифры */
   max-width: 800px;
 }
 
