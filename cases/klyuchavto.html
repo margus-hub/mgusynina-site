@@ -3,13 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ключавто: Мультибрендовый маркетинг — Марина Гусынина</title>
-<meta name="description" content="Кейс Марины Гусыниной: управление маркетингом 7 автомобильных брендов в параллель (CHERY, EXEED, GEELY, BELGEE, JETOUR, OMODA, JAECOO).">
+<title>Ключавто: Региональный маркетинг и бренды — Марина Гусынина</title>
+<meta name="description" content="Кейс Марины Гусыниной: управление маркетингом 9+ автомобильных брендов в 5 городах Сибири, нестандартные интеграции и работа с данными.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+<style>
+/* Стили для блока Аналитика (из вашего документа, адаптированные) */
+.analytics-case {
+  --analytics-ink: var(--text);
+  --analytics-muted: var(--muted);
+  --analytics-accent: var(--accent);
+  --analytics-line: var(--line);
+  padding: 64px 0;
+}
+.analytics-case__intro { max-width: 720px; margin-bottom: 40px; }
+.analytics-case__eyebrow { display: block; color: var(--accent); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 12px; }
+.analytics-case__intro h2 { margin: 0 0 16px; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; font-weight: 600; letter-spacing: -0.03em; }
+.analytics-case__intro p { max-width: 650px; margin: 0; color: var(--text-soft); font-size: 17px; line-height: 1.7; }
+.analytics-case__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.analytics-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+.analytics-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(20, 36, 59, 0.08); }
+.analytics-card__visual { min-height: 190px; padding: 26px; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #f4f8fc, #eaf1f8); }
+.analytics-donut { width: 126px; aspect-ratio: 1; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(#3276c5 0 24%, #49a9ad 24% 48%, #f0a04b 48% 65%, #7589a7 65% 83%, #d7e1ed 83% 100%); position: relative; }
+.analytics-donut::before { content: ""; position: absolute; inset: 17px; border-radius: 50%; background: #f3f7fb; }
+.analytics-donut__center { position: relative; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.analytics-donut__center span { font-size: 24px; font-weight: 700; color: var(--text); }
+.analytics-donut__center small { font-size: 10px; color: var(--muted); }
+.analytics-bars { height: 118px; width: 100%; display: flex; align-items: end; justify-content: center; gap: 10px; border-bottom: 1px solid #bdcada; padding: 0 12px; }
+.analytics-bar { width: 20px; height: var(--bar-height); border-radius: 4px 4px 0 0; background: linear-gradient(180deg, #5b9cdb, #3276c5); }
+.analytics-report { width: 100%; max-width: 220px; padding: 14px; border: 1px solid #d9e2ed; border-radius: 6px; background: #fff; box-shadow: 0 8px 20px rgba(20, 36, 59, 0.06); }
+.analytics-report__top { display: flex; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #e7edf4; }
+.analytics-report__top span { width: 5px; height: 5px; border-radius: 50%; background: #aabbd0; }
+.analytics-report__title { width: 55%; height: 7px; margin: 13px 0; border-radius: 3px; background: #7f9dbf; }
+.analytics-report__line { height: 4px; margin: 8px 0; border-radius: 2px; background: #e0e8f1; }
+.analytics-report__line--short { width: 65%; }
+.analytics-report__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin: 12px 0; }
+.analytics-report__grid span { height: 16px; border-radius: 2px; background: #dce8f5; }
+.analytics-report__grid span:nth-child(3n + 2) { background: #b9d3ed; }
+.analytics-card__body { padding: 24px; flex: 1; }
+.analytics-card__number { display: block; font-size: 11px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+.analytics-card__body h3 { margin: 0 0 10px; font-size: 19px; line-height: 1.35; color: var(--text); }
+.analytics-card__body p { margin: 0; color: var(--text-soft); font-size: 14px; line-height: 1.6; }
+.analytics-process { margin-top: 34px; padding: 32px; border-radius: var(--radius-lg); background: var(--bg-soft); }
+.analytics-process__heading h3 { margin: 0 0 24px; font-size: clamp(20px, 2.5vw, 26px); line-height: 1.35; color: var(--text); }
+.analytics-process__steps { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 14px; }
+.analytics-process__step { min-width: 0; }
+.analytics-process__index { display: grid; place-items: center; width: 36px; height: 36px; margin-bottom: 12px; border-radius: 50%; background: var(--dark); color: #fff; font-size: 12px; font-weight: 700; }
+.analytics-process__step strong { display: block; font-size: 15px; color: var(--text); margin-bottom: 6px; }
+.analytics-process__step p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.analytics-process__arrow { color: #8ca1b8; font-size: 22px; text-align: center; }
+.analytics-case__note { margin: 24px 0 0; color: var(--muted); font-size: 12px; text-align: center; }
+
+@media (max-width: 900px) {
+  .analytics-case__cards { grid-template-columns: 1fr; }
+  .analytics-card { flex-direction: row; align-items: stretch; }
+  .analytics-card__visual { min-width: 160px; flex: 1; }
+  .analytics-process__steps { grid-template-columns: 1fr; gap: 20px; }
+  .analytics-process__arrow { display: none; }
+  .analytics-process__step { display: flex; gap: 16px; align-items: flex-start; }
+  .analytics-process__index { margin-bottom: 0; flex-shrink: 0; }
+}
+@media (max-width: 600px) {
+  .analytics-card { flex-direction: column; }
+  .analytics-card__visual { min-height: 160px; }
+}
+</style>
 </head>
 <body>
 
@@ -32,35 +93,35 @@
 <main class="container-wide case-page">
   <div class="case-hero">
     <div class="eyebrow">Кейс 08 · ГК КЛЮЧАВТО · 2023–2025</div>
-    <h1>Мультибрендовый маркетинг: 7 брендов в одном портфеле</h1>
-    <p class="lead">Управление маркетингом семи автомобильных брендов одновременно. Задача - сохранить идентичность каждого бренда, не смешать аудитории и при этом выстроить единую систему управления.</p>
-    <p class="body-copy">В ГК Ключавто я отвечала за годовое планирование и медиапланирование для CHERY, EXEED, GEELY, BELGEE, JETOUR, OMODA и JAECOO. У каждого бренда был свой сегмент, позиционирование и модель спроса, что требовало гибкого подхода и системной аналитики.</p>
+    <h1>Региональный маркетинг и развитие автомобильных брендов</h1>
+    <p class="lead">Мультибрендовый маркетинг, управление бюджетами, развитие трафика и создание брендовых проектов в пяти городах Сибири.</p>
+    <p class="body-copy">В моей зоне ответственности находились дилерские центры в Омске, Новосибирске, Тюмени, Перми и Екатеринбурге. Я координировала маркетинговую активность, медиапланирование, распределение бюджетов и работу подрядчиков, контролируя связь рекламы с трафиком, обращениями и коммерческими задачами бизнеса.</p>
 
     <div class="tags" aria-label="Ключевые компетенции">
       <span class="tag">Мультибренд</span>
-      <span class="tag">Стратегическое планирование</span>
-      <span class="tag">Digital и лидогенерация</span>
-      <span class="tag">CRM и аналитика</span>
+      <span class="tag">Региональный маркетинг</span>
+      <span class="tag">Коммерческая эффективность</span>
+      <span class="tag">Брендовые проекты</span>
     </div>
   </div>
 
-  <!-- Блок с результатом -->
-  <section class="metric-panel" aria-label="Ключевой результат">
+  <!-- Первый экран: цифры -->
+  <section class="metric-panel" aria-label="Масштаб работы">
     <div>
-      <div class="metric-number">7</div>
-      <div class="metric-title">брендов в параллель</div>
-      <p class="metric-note">CHERY, EXEED, GEELY, BELGEE, JETOUR, OMODA, JAECOO.</p>
+      <div class="metric-number">5</div>
+      <div class="metric-title">городов ответственности</div>
+      <p class="metric-note">Омск, Новосибирск, Тюмень, Пермь, Екатеринбург.</p>
     </div>
     <div class="metric-compare">
       <div class="compare-box">
-        <div class="small">Планирование</div>
-        <div class="big">Год</div>
-        <div class="small">и медиаплан</div>
+        <div class="small">Брендов</div>
+        <div class="big">9+</div>
+        <div class="small">в портфеле</div>
       </div>
       <div class="compare-box highlight">
-        <div class="small">Управление</div>
-        <div class="big">Единая</div>
-        <div class="small">система</div>
+        <div class="small">Каналы</div>
+        <div class="big">360°</div>
+        <div class="small">от digital до событий</div>
       </div>
     </div>
   </section>
@@ -73,76 +134,184 @@
     </div>
     <div class="gallery-item">
       <img src="../images/cases/klyuchavto-2.jpg" alt="Логотипы брендов" loading="lazy" style="height: 200px; object-fit: cover; width: 100%; border-radius: var(--radius);">
-      <div class="gallery-caption">Портфель из 7 брендов</div>
+      <div class="gallery-caption">Портфель брендов</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../images/cases/klyuchavto-3.jpg" alt="EXEED и Полина Гагарина" loading="lazy" style="height: 200px; object-fit: cover; width: 100%; border-radius: var(--radius);">
+      <div class="gallery-caption">Интеграция EXEED в тур Полины Гагариной</div>
+    </div>
+    <div class="gallery-item">
+      <img src="../images/cases/klyuchavto-4.jpg" alt="Мероприятие в филармонии" loading="lazy" style="height: 200px; object-fit: cover; width: 100%; border-radius: var(--radius);">
+      <div class="gallery-caption">VIP-мероприятие «Искусство технологий»</div>
     </div>
   </div>
 
   <section class="section-block">
     <div class="eyebrow">01 · Задача и моя роль</div>
-    <h2>Не смешать бренды и выстроить систему</h2>
-    <p class="section-intro">Управление одним брендом требует фокуса. Управление семью - требует системы. Моей задачей было выстроить процессы так, чтобы каждый бренд получал свою стратегию, свой медиаплан и свою аудиторию, но при этом работал в едином контуре компании.</p>
+    <h2>Управлять портфелем брендов и коммерческой эффективностью</h2>
+    <p class="section-intro">Региональная работа требовала одновременно учитывать особенности городов, задачи дилерских центров, требования импортеров и коммерческие приоритеты брендов. В портфеле находились GEELY, BELGEE, CHERY, EXEED, JETOUR, OMODA, JAECOO, Kai, BAIC и мультибрендовое направление.</p>
     <div class="grid-3">
       <article class="card">
         <div class="card-num">ЗАДАЧА 01</div>
-        <h3>Разделение стратегий</h3>
-        <p>Для каждого бренда - свой сегмент, своя целевая аудитория и свой медиаплан.</p>
+        <h3>Медиапланирование и бюджеты</h3>
+        <p>Формирование медиапланов по брендам, распределение бюджетов и согласование дополнительных расходов на лидогенерацию.</p>
       </article>
       <article class="card">
         <div class="card-num">ЗАДАЧА 02</div>
-        <h3>Единый контур</h3>
-        <p>Сайты, SEO, соцсети, лидогенерация и CRM должны работать как единая система.</p>
+        <h3>Контроль трафика</h3>
+        <p>Ежедневные отчеты по трафику и размещениям, работа с качеством обращений и складским предложением.</p>
       </article>
       <article class="card">
         <div class="card-num">ЗАДАЧА 03</div>
-        <h3>Контроль эффективности</h3>
-        <p>Анализ кампаний, работа с RocketData, контроль качества лидов и работа с импортерами.</p>
+        <h3>Брендовые проекты</h3>
+        <p>Нестандартные интеграции, VIP-мероприятия и запуск нового дилерского центра CHERY.</p>
       </article>
     </div>
   </section>
 
   <section class="section-block">
-    <div class="eyebrow">02 · Реализация</div>
-    <h2>Годовое планирование и операционное управление</h2>
-    <div class="body-copy">
-      <p>Я координировала годовое маркетинговое планирование и медиапланирование для каждого бренда. Это включало разработку BTL-мероприятий, digital-коммуникаций, работу с сайтами, SEO и социальными сетями.</p>
-      <p>Особое внимание уделялось лидогенерации: мы использовали Calltouch, CRM и лид-формы, а также работали с RocketData для анализа цен и предложений конкурентов.</p>
-      <p>Параллельно я вела обучение и бренд-тренинги для команд, а также взаимодействовала с импортерами и агентствами, обеспечивая выполнение стандартов каждого бренда.</p>
+    <div class="eyebrow">02 · Брендовые проекты</div>
+    <h2>Превращать возможности в заметные события</h2>
+    
+    <div class="grid-2" style="margin-top: 32px;">
+      <div>
+        <h3>EXEED × Полина Гагарина</h3>
+        <p class="body-copy">Я самостоятельно координировала интеграцию EXEED в тур Полины Гагариной в Омске. В результате удалось разместить автомобиль непосредственно внутри концертного зала, практически рядом со сценой. Дополнительно я добилась <strong>бесплатного размещения рекламного ролика EXEED</strong> на большом экране (при заявленной стоимости около 2 млн рублей).</p>
+      </div>
+      <div class="img-placeholder" style="height: 300px; border-radius: var(--radius); background: var(--bg-soft); display: grid; place-items: center; color: var(--muted);">Фото со стадионом / автомобилем</div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 32px;">
+      <div class="img-placeholder" style="height: 300px; border-radius: var(--radius); background: var(--bg-soft); display: grid; place-items: center; color: var(--muted);">Фото из филармонии</div>
+      <div>
+        <h3>EXEED «Искусство технологий»</h3>
+        <p class="body-copy">VIP-мероприятие в Омской филармонии в рамках концерта симфонического оркестра. Концепция объединяла автомобильный бренд с культурным событием. В программу вошли концерт, фуршет, подарки, тест-драйв и специальные условия на покупку EXEED RX.</p>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 32px;">
+      <div>
+        <h3>Открытие ДЦ CHERY в Омске</h3>
+        <p class="body-copy">Участие в маркетинговом обеспечении открытия нового дилерского центра. Проект сопровождался вложениями около 32 млн рублей в оформление и идентификацию объекта в соответствии с требованиями импортера.</p>
+      </div>
+      <div class="img-placeholder" style="height: 300px; border-radius: var(--radius); background: var(--bg-soft); display: grid; place-items: center; color: var(--muted);">Фото открытия ДЦ</div>
+    </div>
+  </section>
+
+  <!-- Блок Аналитика и решения (ваша инфографика) -->
+  <section class="analytics-case" id="analytics">
+    <div class="analytics-case__intro">
+      <span class="analytics-case__eyebrow">Аналитический подход</span>
+      <h2>Аналитика и решения</h2>
+      <p>Я использовала данные о рынке, клиентском опыте и рекламной активности, чтобы выявлять возможности для развития брендов и готовить обоснованные рекомендации для бизнеса.</p>
+    </div>
+
+    <div class="analytics-case__cards">
+      <article class="analytics-card">
+        <div class="analytics-card__visual">
+          <div class="analytics-donut" aria-hidden="true">
+            <div class="analytics-donut__center">
+              <span>01</span>
+              <small>Исследование</small>
+            </div>
+          </div>
+        </div>
+        <div class="analytics-card__body">
+          <span class="analytics-card__number">НАПРАВЛЕНИЕ 01</span>
+          <h3>Клиентский опыт</h3>
+          <p>Анализ отзывов и обратной связи, выявление повторяющихся проблем и определение этапов клиентского пути, требующих внимания.</p>
+        </div>
+      </article>
+
+      <article class="analytics-card">
+        <div class="analytics-card__visual">
+          <div class="analytics-bars" aria-hidden="true">
+            <div class="analytics-bar" style="--bar-height: 40%;"></div>
+            <div class="analytics-bar" style="--bar-height: 70%;"></div>
+            <div class="analytics-bar" style="--bar-height: 55%;"></div>
+            <div class="analytics-bar" style="--bar-height: 90%;"></div>
+          </div>
+        </div>
+        <div class="analytics-card__body">
+          <span class="analytics-card__number">НАПРАВЛЕНИЕ 02</span>
+          <h3>Сравнительный анализ</h3>
+          <p>Изучение конкурентной среды, позиционирования брендов и возможностей развития в региональном контексте.</p>
+        </div>
+      </article>
+
+      <article class="analytics-card">
+        <div class="analytics-card__visual">
+          <div class="analytics-report" aria-hidden="true">
+            <div class="analytics-report__top"><span></span><span></span><span></span></div>
+            <div class="analytics-report__title"></div>
+            <div class="analytics-report__line"></div>
+            <div class="analytics-report__line analytics-report__line--short"></div>
+            <div class="analytics-report__grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="analytics-report__line"></div>
+          </div>
+        </div>
+        <div class="analytics-card__body">
+          <span class="analytics-card__number">НАПРАВЛЕНИЕ 03</span>
+          <h3>Выводы для бизнеса</h3>
+          <p>Подготовка аналитических материалов, структурирование результатов и формирование предложений для руководителей и участников проектов.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="analytics-process">
+      <div class="analytics-process__heading">
+        <h3>Как я работала с данными</h3>
+      </div>
+      <div class="analytics-process__steps">
+        <div class="analytics-process__step">
+          <div class="analytics-process__index">01</div>
+          <strong>Данные</strong>
+          <p>Сбор информации из CRM, отчетов и обратной связи</p>
+        </div>
+        <div class="analytics-process__arrow">→</div>
+        <div class="analytics-process__step">
+          <div class="analytics-process__index">02</div>
+          <strong>Анализ</strong>
+          <p>Поиск закономерностей и точек роста</p>
+        </div>
+        <div class="analytics-process__arrow">→</div>
+        <div class="analytics-process__step">
+          <div class="analytics-process__index">03</div>
+          <strong>Выводы</strong>
+          <p>Формулирование гипотез и рекомендаций</p>
+        </div>
+        <div class="analytics-process__arrow">→</div>
+        <div class="analytics-process__step">
+          <div class="analytics-process__index">04</div>
+          <strong>Решения</strong>
+          <p>План действий и корректировка бюджета</p>
+        </div>
+      </div>
     </div>
     
-    <div class="grid-3" style="margin-top: 32px;">
-      <article class="card">
-        <h3>Digital</h3>
-        <p>Сайты, SEO, соцсети, лид-формы и промо-лендинги.</p>
-      </article>
-      <article class="card">
-        <h3>Аналитика</h3>
-        <p>Calltouch, CRM, RocketData, анализ эффективности кампаний.</p>
-      </article>
-      <article class="card">
-        <h3>Команда</h3>
-        <p>Обучение, бренд-тренинги, работа с агентствами и импортерами.</p>
-      </article>
-    </div>
+    <p class="analytics-case__note">Визуализации на этой странице демонстрируют аналитический подход и не содержат внутренних показателей компании.</p>
   </section>
 
   <section class="section-block">
     <div class="eyebrow">03 · Результат</div>
-    <h2>7 брендов, которые работают как единый портфель</h2>
+    <h2>Комплексное управление региональным маркетингом</h2>
     <div class="grid-3">
       <article class="card">
-        <div class="card-num text-accent">7</div>
-        <h3>Брендов</h3>
-        <p>CHERY, EXEED, GEELY, BELGEE, JETOUR, OMODA, JAECOO.</p>
+        <div class="card-num text-accent">Мультибренд</div>
+        <h3>Портфель</h3>
+        <p>Управление 9+ брендами в параллель без смешения аудиторий.</p>
       </article>
       <article class="card">
-        <div class="card-num text-accent">Единая</div>
-        <h3>Система</h3>
-        <p>Планирование, digital, CRM и аналитика в одном контуре.</p>
+        <div class="card-num text-accent">5 городов</div>
+        <h3>География</h3>
+        <p>Единая маркетинговая система для дилерских центров в Сибири.</p>
       </article>
       <article class="card">
-        <div class="card-num text-accent">Опыт</div>
-        <h3>Мультибренд</h3>
-        <p>Управление портфелем без смешения аудиторий и позиционирования.</p>
+        <div class="card-num text-accent">360°</div>
+        <h3>Каналы</h3>
+        <p>От digital и классифайдов до крупных культурных событий.</p>
       </article>
     </div>
   </section>
@@ -150,22 +319,22 @@
   <!-- Блок "Моя роль" -->
   <section class="section-block section-dark">
     <div class="eyebrow eyebrow-dark">04 · Моя роль</div>
-    <h2 class="h2-dark">Управление портфелем, а не одним брендом</h2>
-    <p class="lead-dark" style="margin-bottom: 24px;">Я отвечала за стратегию, планирование и операционное управление маркетингом семи брендов одновременно.</p>
-    <p class="lead-dark" style="margin-bottom: 40px;">Это требовало умения держать в голове разные сегменты, аудитории и задачи, при этом не теряя фокус на общем результате бизнеса.</p>
+    <h2 class="h2-dark">Управление процессами и данными</h2>
+    <p class="lead-dark" style="margin-bottom: 24px;">Я отвечала за комплекс маркетинговых задач в направлении новых автомобилей: медиапланирование, распределение бюджетов, разработку акций, контроль трафика и обработки обращений.</p>
+    <p class="lead-dark" style="margin-bottom: 40px;">Мой подход - соединять брендовые задачи с коммерческими приоритетами бизнеса, управлять процессами на основе данных и находить нестандартные решения, которые помогают бренду выделяться на рынке.</p>
 
     <div class="pillars">
       <div class="pillar">
-        <h3>Стратегия</h3>
-        <p>Разные стратегии для разных брендов.</p>
+        <h3>Стратегия и бюджеты</h3>
+        <p>Медиапланы, УТП, распределение бюджета на лидогенерацию.</p>
       </div>
       <div class="pillar">
-        <h3>Операции</h3>
-        <p>Digital, CRM, лидогенерация, аналитика.</p>
+        <h3>Брендовые события</h3>
+        <p>Интеграции, VIP-мероприятия, открытие дилерских центров.</p>
       </div>
       <div class="pillar">
-        <h3>Команда</h3>
-        <p>Обучение, агентства, импортеры.</p>
+        <h3>Аналитика и команда</h3>
+        <p>Контроль трафика, качество обращений, координация подрядчиков.</p>
       </div>
     </div>
   </section>
