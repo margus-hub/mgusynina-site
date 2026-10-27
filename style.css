@@ -721,3 +721,21 @@ footer a:hover { text-decoration: underline; }
 .about-cards {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
 }
+
+/* ===== ФИКС ДЛЯ ТЕКСТА (чтобы он заполнял всю ширину) ===== */
+.hero-role,
+.hero-slogan,
+.about-lead,
+.about-text,
+.lead,
+.lead-dark {
+  max-width: 100% !important;
+}
+
+/* Делаем текстовые колонки шире, чтобы они шли в одну строку на большом экране */
+.case-text p,
+.case-card p,
+.about-text {
+  font-size: 18px; /* Немного увеличим шрифт для читаемости на широком экране */
+  line-height: 1.6;
+}
