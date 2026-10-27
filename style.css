@@ -695,3 +695,29 @@ footer a:hover { text-decoration: underline; }
   .case-page .grid-3, .case-page .process-grid, .case-page .gallery, .case-page .metric-compare { grid-template-columns: 1fr; }
   .case-page .quote-panel, .case-page .metric-panel, .case-page .card { padding: 24px; }
 }
+
+/* ===== ПРИНУДИТЕЛЬНОЕ РАСТЯЖЕНИЕ (ВЕРНУТЬ КАК БЫЛО) ===== */
+.container, 
+.container-wide, 
+.hero, 
+.nav, 
+.cta-banner,
+.section-soft .container,
+.section-soft .container-wide {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+/* Отступы по бокам, чтобы текст не прилипал к краю монитора */
+.container, 
+.container-wide, 
+.hero {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+/* Карточки становятся резиновыми */
+.stats,
+.about-cards {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+}
