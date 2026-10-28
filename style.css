@@ -120,12 +120,12 @@ header {
 .hero h1 { margin-bottom: 24px; letter-spacing: -0.03em; }
 .hero-role {
   font-size: clamp(17px, 1.7vw, 20px); color: var(--text-soft);
-  max-width: 620px; margin: 0 0 20px; line-height: 1.5; letter-spacing: -0.015em;
+  max-width: 100%; margin: 0 0 20px; line-height: 1.5; letter-spacing: -0.015em;
 }
 .hero-role-title { color: var(--accent); font-weight: 600; }
 .hero-slogan {
   font-size: clamp(20px, 2.2vw, 26px); font-weight: 600; color: var(--text);
-  letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 32px; max-width: 620px;
+  letter-spacing: -0.025em; line-height: 1.2; margin: 0 0 32px; max-width: 100%;
 }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
