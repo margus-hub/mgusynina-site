@@ -112,7 +112,7 @@ header {
   grid-template-columns: 350px 1fr; /* Фото слева, текст справа */
   gap: 64px;
   align-items: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   text-align: left; /* Текст выравнивается по левому краю */
 }
 .hero-photo img {
