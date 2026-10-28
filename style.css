@@ -13,7 +13,7 @@
   --accent-hover: #0077ed;
   --radius: 18px;
   --radius-lg: 28px;
-  --max: 1080px;
+  --max: 1300px;
   --ease: cubic-bezier(.4, 0, .2, 1);
   --section-gap: 56px;
 }
@@ -61,7 +61,7 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .nav {
-  max-width: 1200px; margin: 0 auto;
+  max-width: 1450px; margin: 0 auto;
   padding: 0 24px; height: 52px;
   display: flex; justify-content: space-between; align-items: center;
   gap: 24px;
@@ -117,16 +117,23 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 48px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  /* Убрали max-width: 1000px, чтобы они растянулись на всю ширину контейнера */
 }
-.stat { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 32px 28px; transition: transform .3s var(--ease); }
+.stat { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 40px 32px; transition: transform .3s var(--ease); }
 .section-soft .stat { background: #ffffff; }
 .stat:hover { transform: translateY(-4px); }
-.stat .num { font-size: clamp(36px, 4.5vw, 52px); font-weight: 600; color: var(--text); letter-spacing: -0.035em; line-height: 1; margin-bottom: 10px; }
+.stat .num {
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  white-space: normal;
+  word-break: break-word;
+}
 .stat .num.accent { color: var(--accent); }
-.stat .label { font-size: 14px; color: var(--muted); line-height: 1.45; }
+.stat .label { font-size: 16px; color: var(--muted); line-height: 1.45; }
 
 /* ===== BUTTONS ===== */
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; font-size: 15px; font-weight: 400; border-radius: 980px; transition: all .25s var(--ease); cursor: pointer; border: 1px solid transparent; }
