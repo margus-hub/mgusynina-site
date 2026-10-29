@@ -1,85 +1,299 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>System: Управляемый маркетинг — Марина Гусынина</title>
-<meta name="description" content="Внедрение сквозной аналитики и CRM: Calltouch, Bitrix24, Smartis. Снижение CAC на 60%.">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Кейс Frank Auto: построение управляемой системы маркетинга, сквозная аналитика, CRM и снижение стоимости привлечения клиента.">
+  <meta name="theme-color" content="#ffffff">
+  <title>Frank Auto - от рекламных расходов к управляемому маркетингу | Марина Гусынина</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    /* Специфичные стили для этой страницы (чтобы не ломать общий style.css) */
+    .case-hero { padding-top: 60px; }
+    .case-hero .eyebrow { margin-bottom: 16px; }
+    .case-hero h1 { max-width: 900px; margin-bottom: 24px; }
+    .case-hero .lead { max-width: 800px; margin-bottom: 32px; font-size: 21px; }
+    .case-hero .intro { max-width: 800px; color: var(--muted); margin-bottom: 32px; }
+    
+    .case-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; }
+    .case-tag { font-size: 13px; padding: 8px 16px; background: var(--bg-soft); border-radius: 980px; color: var(--text-soft); }
+
+    .case-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 60px; }
+    .case-metric { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 32px; }
+    .case-metric .num { font-size: 48px; font-weight: 600; color: var(--accent); line-height: 1.1; margin-bottom: 12px; }
+    .case-metric .label { font-size: 15px; color: var(--text-soft); line-height: 1.4; }
+
+    /* Схемы */
+    .system-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 40px 0; }
+    .flow-step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; position: relative; }
+    .flow-step:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); font-size: 20px; color: var(--accent); background: #fff; padding: 4px; border-radius: 50%; z-index: 2; }
+    .flow-step .step-num { font-size: 12px; font-weight: 600; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+    .flow-step h3 { font-size: 18px; margin-bottom: 8px; }
+    .flow-step p { font-size: 14px; color: var(--muted); margin: 0; }
+
+    .integration-box { background: #f0f7ff; border-radius: var(--radius); padding: 24px; text-align: center; margin-bottom: 60px; }
+    .integration-box strong { color: var(--accent); }
+
+    /* Графики (Заглушки, если нужны красивые схемы) */
+    .chart-container { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; margin-bottom: 40px; text-align: center; }
+    .chart-container h3 { margin-bottom: 24px; font-size: 20px; }
+    .chart-placeholder { width: 100%; height: 300px; background: var(--bg-soft); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; }
+    
+    .chart-bars { display: flex; align-items: flex-end; gap: 16px; height: 200px; margin-top: 24px; justify-content: center; }
+    .bar { width: 40px; background: var(--accent); border-radius: 6px 6px 0 0; position: relative; transition: height 1s ease; }
+    .bar span { position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+    @media (max-width: 768px) {
+      .case-metrics { grid-template-columns: 1fr; }
+      .system-flow { grid-template-columns: 1fr; }
+      .flow-step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -20px; transform: translateX(50%); }
+      .chart-bars { gap: 8px; }
+      .bar { width: 30px; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="../../index.html">
+        <img src="../../logo.png" alt="Логотип" class="brand-logo">
+        <span class="brand-name">Марина Гусынина</span>
+      </a>
+      <button class="burger" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Обо мне</a></li>
+        <li><a href="../../cases.html" class="active">Кейсы</a></li>
+        <li><a href="../../experience.html">Опыт</a></li>
+        <li><a href="../../index.html#contacts">Контакты</a></li>
+      </ul>
+    </div>
+  </header>
 
-<header>
-  <nav class="nav">
-    <a href="../index.html" class="brand">
-      <img src="../images/logo.png" alt="Марина Гусынина" class="brand-logo">
-      <div class="brand-name">Марина Гусынина</div>
-    </a>
-    <button class="burger" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Обо мне</a></li>
-      <li><a href="../cases.html" class="active">Кейсы</a></li>
-      <li><a href="../about.html">Опыт</a></li>
-      <li><a href="../contacts.html">Контакты</a></li>
-    </ul>
-  </nav>
-</header>
+  <main class="case-page">
+    <section class="container case-hero">
+      <div class="eyebrow">Кейс 02 · Frank Auto · 2025-2026</div>
+      <h1>От рекламных расходов - к управляемому маркетингу</h1>
+      <p class="lead">Как связать маркетинг, обращения и продажи в единую систему принятия решений.</p>
+      <p class="intro">Инициировала внедрение сквозной аналитики и выстроила связку Calltouch, Bitrix24 и Smartis, чтобы видеть путь клиента от первого обращения до коммерческого результата и оценивать эффективность каналов на основе данных.</p>
+      
+      <div class="case-tags">
+        <span class="case-tag">Маркетинговая аналитика</span>
+        <span class="case-tag">CRM</span>
+        <span class="case-tag">Управление CAC</span>
+        <span class="case-tag">Автоматизация отчётности</span>
+      </div>
 
-<section class="container-wide case-page">
-  <div class="eyebrow">Case 02 · Frank Auto · 2025 — 2026</div>
-  <h1>System: От «тратим на рекламу» к управляемому маркетингу</h1>
-  <p class="lead">Внедрение сквозной аналитики и CRM. Связка Calltouch + Bitrix24 + Smartis позволила видеть путь клиента от первого звонка до продажи и управлять бюджетом на основе данных, а не интуиции.</p>
+      <div class="case-metrics">
+        <div class="case-metric">
+          <div class="num">-60%</div>
+          <div class="label">Стоимость привлечения клиента (CAC)</div>
+        </div>
+        <div class="case-metric">
+          <div class="num">4</div>
+          <div class="label">Системы в едином контуре</div>
+        </div>
+        <div class="case-metric">
+          <div class="num">100%</div>
+          <div class="label">Прозрачность клиентского пути</div>
+        </div>
+      </div>
+    </section>
 
-  <div class="case-metric">
-    <div class="value">CAC −60%</div>
-    <div class="desc">снижение стоимости привлечения клиента · прозрачная аналитика каналов</div>
-  </div>
+    <!-- 01 Бизнес-задача -->
+    <section class="container">
+      <div class="eyebrow">01 · Бизнес-задача</div>
+      <h2>Понять, какие каналы действительно приводят к результату</h2>
+      <p class="about-text" style="max-width: 800px;">Задача была не только в том, чтобы объединить данные. Нужно было последовательно снижать стоимость привлечения: улучшать формы обратной связи и посадочные страницы, пересматривать эффективность рекламных каналов, отключать дорогие источники с низкой отдачей и развивать партнёрский маркетинг.</p>
+      
+      <div class="about-cards" style="margin-top: 40px;">
+        <div class="about-card">
+          <h3>Разная отдача каналов</h3>
+          <p>Нужно было видеть распределение обращений по источникам и оценивать не только объём трафика, но и его коммерческую отдачу.</p>
+        </div>
+        <div class="about-card">
+          <h3>Конверсия на каждом этапе</h3>
+          <p>На стоимость привлечения влияли не только рекламные ставки, но и формы обратной связи, посадочные страницы и дальнейшая обработка заявок.</p>
+        </div>
+        <div class="about-card">
+          <h3>Необходимость оптимизации</h3>
+          <p>Требовалось перераспределять бюджет в пользу источников с лучшей отдачей и развивать дополнительные каналы привлечения, включая партнёрства.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="gallery">
-    <img src="../images/cases/system-1.jpg" alt="Управление модельным миксом и аналитика (данные скрыты по NDA)">
-    <img src="../images/cases/system-2.jpg" alt="Dashboard маркетинговой аналитики">
-    <img src="../images/cases/system-3.jpg" alt="Интерфейс Calltouch: контроль звонков">
-    <img src="../images/cases/system-4.jpg" alt="CRM Bitrix24: воронка продаж">
-  </div>
+    <!-- 02 Архитектура -->
+    <section class="container section-soft">
+      <div class="eyebrow">02 · Архитектура решения</div>
+      <h2>Соединить источники, CRM и коммерческие данные</h2>
+      <p class="about-text" style="max-width: 800px;">Вместо разрозненных отчётов был выстроен контур, в котором информация последовательно проходит от обращения к его обработке и аналитике.</p>
+      
+      <div class="system-flow">
+        <div class="flow-step">
+          <div class="step-num">Шаг 01</div>
+          <h3>Источники</h3>
+          <p>Рекламные каналы и входящие обращения</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">Шаг 02</div>
+          <h3>Calltouch</h3>
+          <p>Звонки, распознавание речи, теги и контроль пропусков</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">Шаг 03</div>
+          <h3>Bitrix24</h3>
+          <p>Фиксация лидов, поля, этапы и дисциплина обработки</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">Шаг 04</div>
+          <h3>Smartis</h3>
+          <p>Сведение данных и автоматизация аналитической отчётности</p>
+        </div>
+      </div>
+      
+      <div class="integration-box">
+        <strong>Коммерческие данные:</strong> сведения из 1С передавались через Bitrix24, чтобы учитывать выдачи автомобилей и контракты при анализе результата.
+      </div>
+    </section>
 
-  <div class="table-wrap">
-    <table>
-      <tr><th>Этап</th><th>Что сделано</th></tr>
-      <tr><td>Аудит</td><td>Выявление потерь обращений, ручной сбор данных</td></tr>
-      <tr><td>Телефония</td><td>Внедрение Calltouch: распознавание речи, теги, контроль звонков без ответа</td></tr>
-      <tr><td>CRM</td><td>Настройка Bitrix24: обязательные поля, отказ от личных номеров, отчётность</td></tr>
-      <tr><td>Аналитика</td><td>Внедрение Smartis для сквозной аналитики и автоматизации отчётов</td></tr>
-      <tr><td>Интеграция</td><td>Связка Calltouch → Bitrix24 → Smartis → отчёты. Передача данных из 1С.</td></tr>
-      <tr><td>Результат</td><td>Прозрачная воронка, снижение CAC на 60%</td></tr>
-    </table>
-  </div>
+    <!-- 03 Реализация -->
+    <section class="container">
+      <div class="eyebrow">03 · Реализация</div>
+      <h2>Изменить не только инструменты, но и правила работы</h2>
+      
+      <div class="about-cards" style="margin-top: 40px; grid-template-columns: 1fr 1fr;">
+        <div class="about-card">
+          <h3>01 / Конверсия</h3>
+          <p style="margin-bottom: 12px;">Формы обратной связи и посадочные страницы</p>
+          <ul style="padding-left: 20px; color: var(--muted); font-size: 15px;">
+            <li>Улучшение форм обратной связи (ФОС).</li>
+            <li>Доработка посадочных страниц под задачи рекламных каналов.</li>
+            <li>Снижение потерь потенциальных клиентов на пути к обращению.</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>02 / Рекламные каналы</h3>
+          <p style="margin-bottom: 12px;">Оптимизация медиамикса</p>
+          <ul style="padding-left: 20px; color: var(--muted); font-size: 15px;">
+            <li>Отключение дорогих источников с низкой отдачей.</li>
+            <li>Перераспределение внимания и бюджета между каналами.</li>
+            <li>Сопоставление объёма трафика с обращениями и коммерческими результатами.</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>03 / Партнёрский маркетинг</h3>
+          <p style="margin-bottom: 12px;">Развитие дополнительных источников</p>
+          <ul style="padding-left: 20px; color: var(--muted); font-size: 15px;">
+            <li>Работа с партнёрскими источниками и рекомендациями.</li>
+            <li>Расширение структуры каналов привлечения.</li>
+            <li>Оценка вклада источников в общий поток обращений.</li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>04 / Аналитика и CRM</h3>
+          <p style="margin-bottom: 12px;">Связь источников с результатом</p>
+          <ul style="padding-left: 20px; color: var(--muted); font-size: 15px;">
+            <li>Calltouch - звонки, теги и контроль пропущенных обращений.</li>
+            <li>Bitrix24 - фиксация и обработка лидов.</li>
+            <li>Smartis и данные 1С - аналитика и связь с коммерческими событиями.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <div class="case-text">
-    <h4>Как это было</h4>
-    <p>Пришла в ситуацию, когда данные по размещениям собирались вручную, источники обращений терялись, а бизнесу было сложно определить эффективные и неэффективные каналы.</p>
-    <p>Создала единый подход к сбору и анализу данных, связав маркетинг с продажами. Расширила функциональность <strong>Calltouch</strong>: распознавание речи, контроль звонков без ответа, автоматические повторные звонки, анализ качества обращений.</p>
-    <p>В <strong>Bitrix24</strong> добавила обязательные поля и теги, сформировала отчётность по звонкам, исключила рабочие звонки с личных номеров, активировала маркетинговый блок CRM.</p>
-    <p>Инициировала внедрение <strong>Smartis</strong> для автоматизации аналитики. Выстроила контур: Calltouch → Bitrix24 → Smartis → автоматизированные отчёты. Организовала передачу данных из 1С через Bitrix24 для отслеживания выдач и контрактов.</p>
-    <p><em>Фрагменты рабочих таблиц показаны с водяным знаком «confidentially» в соответствии с подписанным NDA.</em></p>
-  </div>
+    <!-- 04 Результаты -->
+    <section class="container section-soft">
+      <div class="eyebrow">04 · Результаты</div>
+      <h2>Отдельный показатель - и системные изменения</h2>
+      <p class="about-text" style="max-width: 800px;">Главный количественный результат - снижение CAC. Не менее важным итогом стало повышение прозрачности маркетинга и создание основы для регулярных решений на данных.</p>
+      
+      <div class="case-metrics" style="margin-top: 40px; grid-template-columns: 1.2fr 1fr 1fr;">
+        <div class="case-metric" style="background: var(--accent); color: #fff;">
+          <div class="num" style="color: #fff;">-60%</div>
+          <div class="label" style="color: rgba(255,255,255,0.8);">Стоимость привлечения клиента (CAC)</div>
+          <p style="color: rgba(255,255,255,0.9); margin-top: 12px; font-size: 14px;">Итог комплексной оптимизации: работа с рекламными каналами, конверсией посадочных страниц, формами обратной связи и дополнительными источниками привлечения.</p>
+        </div>
+        <div class="case-metric">
+          <div class="num" style="color: var(--text);">Каналы</div>
+          <div class="label">Распределение и отдача</div>
+          <p style="color: var(--muted); margin-top: 12px; font-size: 14px;">Отчётность показывала динамику трафика и вклад разных источников, помогая принимать решения по медиамиксу.</p>
+        </div>
+        <div class="case-metric">
+          <div class="num" style="color: var(--text);">CRO</div>
+          <div class="label">Работа с конверсией</div>
+          <p style="color: var(--muted); margin-top: 12px; font-size: 14px;">Улучшения форм обратной связи и посадочных страниц дополняли оптимизацию рекламных расходов.</p>
+        </div>
+      </div>
+    </section>
 
-  <nav class="case-nav">
-    <a href="rox.html" class="case-nav-prev">← Предыдущий</a>
-    <a href="../cases.html">Все кейсы</a>
-    <a href="classifieds.html" class="case-nav-next">Следующий →</a>
-  </nav>
-</section>
+    <!-- 05 Моя роль -->
+    <section class="container">
+      <div class="eyebrow">05 · Моя роль</div>
+      <h2>От диагностики до управленческого контура</h2>
+      <p class="about-text" style="max-width: 800px; margin-bottom: 40px;">Мой вклад заключался не только в выборе инструментов. Я инициировала внедрение аналитики, определяла логику связки систем и организовала изменения, необходимые для более полной фиксации и оценки клиентского пути.</p>
+      
+      <div class="about-cards" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="about-card" style="background: var(--bg-soft);">
+          <h3>Диагностика</h3>
+          <p>Выявление потерь данных и проблем ручного сбора отчётности.</p>
+        </div>
+        <div class="about-card" style="background: var(--bg-soft);">
+          <h3>Архитектура</h3>
+          <p>Определение логики связки Calltouch, Bitrix24, Smartis и данных 1С.</p>
+        </div>
+        <div class="about-card" style="background: var(--bg-soft);">
+          <h3>Изменение процессов</h3>
+          <p>Правила фиксации обращений, контроль звонков и отчётность.</p>
+        </div>
+        <div class="about-card" style="background: var(--bg-soft);">
+          <h3>Ориентация на результат</h3>
+          <p>Переход к оценке маркетинга через стоимость привлечения и коммерческие данные.</p>
+        </div>
+      </div>
+    </section>
 
-<footer style="margin-top: 100px;">
-  © 2026 Марина Гусынина · <a href="../contacts.html">Связаться</a>
-</footer>
+    <!-- Материалы проекта (Визуализации) -->
+    <section class="container">
+      <div class="eyebrow">Материалы проекта</div>
+      <h2>Не просто отчёты - рабочая система</h2>
+      <p class="about-text" style="max-width: 800px; margin-bottom: 40px;">Ниже представлены визуализации, демонстрирующие формат аналитики, который использовался в проекте. Конфиденциальные данные скрыты в соответствии с NDA.</p>
+      
+      <div class="chart-container">
+        <h3>Динамика трафика по месяцам (индексированные значения)</h3>
+        <div class="chart-bars">
+          <div class="bar" style="height: 60%;"><span>Янв</span></div>
+          <div class="bar" style="height: 75%;"><span>Фев</span></div>
+          <div class="bar" style="height: 90%;"><span>Мар</span></div>
+          <div class="bar" style="height: 85%;"><span>Апр</span></div>
+          <div class="bar" style="height: 70%;"><span>Май</span></div>
+          <div class="bar" style="height: 80%;"><span>Июн</span></div>
+          <div class="bar" style="height: 95%;"><span>Июл</span></div>
+          <div class="bar" style="height: 100%;"><span>Авг</span></div>
+          <div class="bar" style="height: 110%;"><span>Сен</span></div>
+        </div>
+      </div>
 
-<script src="../script.js"></script>
+      <div class="chart-container">
+        <h3>Распределение каналов привлечения (условные доли)</h3>
+        <div class="chart-placeholder">Здесь будет красивая круговая диаграмма (SVG или CSS)</div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container">
+      <div class="cta-banner">
+        <h2>Маркетинг должен объяснять, что работает и почему</h2>
+        <p>Другие проекты - о стратегии, развитии брендов и создании новых возможностей для бизнеса.</p>
+        <a href="../../cases.html" class="btn btn-primary">Посмотреть все кейсы ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="padding: 0;">
+      <p>© 2026 Марина Гусынина · <a href="../../cases.html">Все кейсы</a> · <a href="../../index.html#contacts">Связаться</a></p>
+    </div>
+  </footer>
 </body>
 </html>
