@@ -10,34 +10,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css">
+
+<!-- ЛОКАЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ СЕТОК И КАРТОЧЕК, БЕЗ ИЗМЕНЕНИЯ ШРИФТОВ -->
 <style>
-  /* Стандартные стили для этой страницы */
   .case-wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; padding: 60px 0; }
   
-  .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; display: block; }
-  .eyebrow-dark { color: var(--accent); }
-  
-  h1 { font-size: clamp(32px, 4.5vw, 56px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 700; color: var(--ink); margin-bottom: 24px; max-width: 900px; }
-  h2 { font-size: clamp(24px, 3vw, 36px); line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; color: var(--ink); margin-bottom: 24px; }
-  h3 { font-size: 18px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
-  
-  .lead { font-size: clamp(18px, 1.8vw, 22px); line-height: 1.4; color: var(--muted); margin-bottom: 20px; font-weight: 500; max-width: 800px; }
-  .body-copy { font-size: 16px; line-height: 1.6; color: var(--muted); margin-bottom: 16px; max-width: 900px; }
-  .section-intro { font-size: 16px; line-height: 1.5; color: var(--muted); margin-bottom: 40px; max-width: 900px; }
-
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; margin-bottom: 48px; }
-  .tag { border: 1px solid var(--line); border-radius: 99px; padding: 8px 14px; font-size: 13px; color: var(--ink); background: var(--bg-soft); }
-
   /* Сетки */
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 40px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
 
-  /* Карточки */
+  /* Карточки (используем переменные из твоего style.css) */
   .card { background: var(--bg-soft); border-radius: 22px; padding: 32px; display: flex; flex-direction: column; }
-  .card-num { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; letter-spacing: 0.05em; }
-  .card-num.text-accent { font-size: 24px; font-weight: 700; color: var(--accent); text-transform: none; }
-  .card h3 { font-size: 18px; margin-bottom: 12px; font-weight: 600; }
+  .card-num { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
+  .card-num.text-accent { font-size: 24px; font-weight: 700; color: var(--accent); }
+  .card h3 { font-size: 18px; margin-bottom: 12px; }
   .card p { font-size: 15px; color: var(--muted); line-height: 1.5; margin: 0; }
 
   /* Панель метрик */
@@ -56,9 +43,9 @@
   .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); }
   .gallery-caption { font-size: 13px; color: var(--muted); margin-top: 12px; text-align: center; }
 
-  /* Фичи */
+  /* Блоки с картинками */
   .tanzor-feature { margin-top: 60px; }
-  .tanzor-feature img { width: 100%; border-radius: 16px; border: 1px solid var(--line); }
+  .tanzor-feature img { width: 100%; border-radius: 16px; border: 1px solid var(--line); height: 100%; object-fit: cover; }
   .tanzor-link { display: inline-block; margin-top: 16px; color: var(--accent); text-decoration: underline; font-weight: 500; }
   .tanzor-callout { background: var(--bg-soft); border-radius: 16px; padding: 24px; margin-top: 24px; border: 1px solid var(--line); }
   .tanzor-callout strong { display: block; font-size: 16px; margin-bottom: 8px; color: var(--ink); }
@@ -89,6 +76,7 @@
 
   @media (max-width: 900px) {
     .grid-2, .grid-3, .grid-4, .gallery, .metric-panel, .pillars { grid-template-columns: 1fr; }
+    .grid-2 { gap: 24px; }
     .hero { padding-top: 40px; }
     .nav { flex-direction: column; align-items: flex-start; gap: 12px; }
     .nav-links { gap: 15px; }
@@ -115,7 +103,7 @@
 <main class="case-wrap">
   
   <div class="hero">
-    <div class="eyebrow">ТАНЗОР · 2020-2021 · ПРОМЫШЛЕННЫЙ B2B</div>
+    <div class="eyebrow">Танзор · 2020-2021 · Промышленный B2B</div>
     <h1>Промышленный маркетинг: цифровая стратегия, продукты и производство</h1>
     <p class="lead">Комплексная работа над маркетингом производителя материалов для полиграфической отрасли: создание цифровой площадки, продвижение специализированной продукции, развитие экспертного контента и презентация новых производственных возможностей.</p>
     <p class="body-copy">В «Танзор» я руководила маркетинговым направлением и соединяла несколько задач: от позиционирования компании и запуска сайта до вывода продуктов на рынок, подготовки виртуального выставочного стенда и коммуникации с профессиональной аудиторией.</p>
@@ -175,17 +163,17 @@
     
     <div class="grid-3">
       <div class="card">
-        <div class="card-num">НАПРАВЛЕНИЕ 01</div>
+        <div class="card-num">Направление 01</div>
         <h3>Цифровое присутствие</h3>
         <p>Создать сайт, который последовательно представляет компанию, продуктовый портфель, производственные возможности и экспертные материалы.</p>
       </div>
       <div class="card">
-        <div class="card-num">НАПРАВЛЕНИЕ 02</div>
+        <div class="card-num">Направление 02</div>
         <h3>Продукты и рынок</h3>
         <p>Подготовить профессиональную презентацию новых и специализированных продуктов, включая LABITEX Health.</p>
       </div>
       <div class="card">
-        <div class="card-num">НАПРАВЛЕНИЕ 03</div>
+        <div class="card-num">Направление 03</div>
         <h3>Экспертиза и коммуникации</h3>
         <p>Раскрыть технологические компетенции, представить развитие производства и использовать отраслевые и цифровые площадки для общения с клиентами.</p>
       </div>
@@ -196,107 +184,103 @@
     <div class="eyebrow">02 · Реализация</div>
     <h2>От цифровой площадки до презентации новых производственных возможностей</h2>
 
-    <div class="tanzor-feature">
-      <div class="grid-2">
-        <div>
-          <h3>Создание сайта: от концепции до запуска</h3>
-          <p class="body-copy">Я формировала концепцию и структуру сайта, работала над позиционированием и содержанием разделов. Для выбора подрядчика организовала многоэтапный отбор: подготовила презентацию проекта, изучила брифы, провела онлайн-встречи и оценила опыт потенциальных исполнителей. По итогам выбрала команду для реализации.</p>
-          <p class="body-copy">Сайт задумывался как долгосрочная цифровая площадка - не только визитная карточка, но и инструмент презентации продуктов, производственных компетенций и профессиональных знаний компании.</p>
-          <a class="tanzor-link" href="https://tanzor.ru/" target="_blank" rel="noopener">Сайт компании «Танзор» ↗</a>
-        </div>
-        <div>
-          <img src="../images/cases/tanzor-site-home.jpg" alt="Главная страница сайта Танзор">
-          <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Главная страница сайта</p>
-        </div>
+    <div class="grid-2">
+      <div>
+        <h3>Создание сайта: от концепции до запуска</h3>
+        <p class="body-copy">Я формировала концепцию и структуру сайта, работала над позиционированием и содержанием разделов. Для выбора подрядчика организовала многоэтапный отбор: подготовила презентацию проекта, изучила брифы, провела онлайн-встречи и оценила опыт потенциальных исполнителей. По итогам выбрала команду для реализации.</p>
+        <p class="body-copy">Сайт задумывался как долгосрочная цифровая площадка - не только визитная карточка, но и инструмент презентации продуктов, производственных компетенций и профессиональных знаний компании.</p>
+        <a class="tanzor-link" href="https://tanzor.ru/" target="_blank" rel="noopener">Сайт компании «Танзор» ↗</a>
+      </div>
+      <div>
+        <img src="../images/cases/tanzor-site-home.jpg" alt="Главная страница сайта Танзор" style="height: 350px;">
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Главная страница сайта</p>
       </div>
     </div>
 
-    <div class="tanzor-feature">
+    <div style="margin-top: 60px;">
       <h3>Контент, который объясняет сложные технологии</h3>
       <p class="body-copy">Для сайта я развивала тематические направления, которые помогали переводить техническую экспертизу в понятный и полезный для профессиональной аудитории контент.</p>
       <div class="grid-2" style="margin-top: 24px;">
         <div class="card">
-          <div class="card-num">ТЕМАТИЧЕСКИЙ РАЗДЕЛ</div>
+          <div class="card-num">Тематический раздел</div>
           <h3>«Технолог и я»</h3>
           <p>Практические вопросы полиграфических технологий и задачи, с которыми сталкиваются специалисты отрасли.</p>
         </div>
         <div class="card">
-          <div class="card-num">ТЕМАТИЧЕСКИЙ РАЗДЕЛ</div>
+          <div class="card-num">Тематический раздел</div>
           <h3>«Мистер и миссис CMYK»</h3>
           <p>Цвет, подбор оттенков и особенности технологий печати.</p>
         </div>
       </div>
-      <div class="grid-2" style="margin-top: 24px;">
-        <div>
-          <h3>«Энциклопедия дефектов» и Troubleshooting Guide</h3>
-          <p class="body-copy">Отдельное направление - экспертные материалы, помогающие клиентам разбираться в дефектах печати и возможных причинах их возникновения. В основу таких материалов лег практический опыт специалистов компании, накопленный за многие годы работы с разными материалами и технологиями.</p>
-        </div>
-        <div>
-          <img src="../images/cases/tanzor-troubleshooting.jpg" alt="Обучающий гид Troubleshooting Guide">
-          <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Обучающий гид для клиентов</p>
-        </div>
+    </div>
+
+    <div class="grid-2" style="margin-top: 60px;">
+      <div>
+        <h3>«Энциклопедия дефектов» и Troubleshooting Guide</h3>
+        <p class="body-copy">Отдельное направление - экспертные материалы, помогающие клиентам разбираться в дефектах печати и возможных причинах их возникновения. В основу таких материалов лег практический опыт специалистов компании, накопленный за многие годы работы с разными материалами и технологиями.</p>
+      </div>
+      <div>
+        <img src="../images/cases/tanzor-troubleshooting.jpg" alt="Обучающий гид Troubleshooting Guide" style="height: 300px;">
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Обучающий гид для клиентов</p>
       </div>
     </div>
 
-    <div class="tanzor-feature">
-      <div class="grid-2">
-        <div>
-          <h3>Продуктовый маркетинг: LABITEX Health</h3>
-          <p class="body-copy">Я занималась продвижением линейки LABITEX Health - лаков с противомикробными свойствами. Важно было представить назначение и технические особенности специализированного продукта профессиональной аудитории, подготовить понятные материалы и раскрыть его применение в полиграфии.</p>
-          <p class="body-copy">Также я занималась продвижением производственного направления SIA «BALTINK» в Латвии и размещением материалов о продукции и производственных возможностях в профильных отраслевых изданиях.</p>
-        </div>
-        <div>
-          <img src="../images/cases/tanzor-labitex.jpg" alt="Продукция LABITEX Health">
-          <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Материалы о продукте LABITEX Health</p>
-        </div>
+    <div class="grid-2" style="margin-top: 60px;">
+      <div>
+        <h3>Продуктовый маркетинг: LABITEX Health</h3>
+        <p class="body-copy">Я занималась продвижением линейки LABITEX Health - лаков с противомикробными свойствами. Важно было представить назначение и технические особенности специализированного продукта профессиональной аудитории, подготовить понятные материалы и раскрыть его применение в полиграфии.</p>
+        <p class="body-copy">Также я занималась продвижением производственного направления SIA «BALTINK» в Латвии и размещением материалов о продукции и производственных возможностях в профильных отраслевых изданиях.</p>
+      </div>
+      <div>
+        <img src="../images/cases/tanzor-labitex.jpg" alt="Продукция LABITEX Health" style="height: 350px;">
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">Материалы о продукте LABITEX Health</p>
       </div>
     </div>
 
-    <div class="tanzor-feature">
-      <div class="grid-2">
-        <div>
-          <h3>Запуск нового производства УФ-красок</h3>
-          <p class="body-copy">В 2021 году «Танзор» запустил в Шебекино производство полного цикла цветных УФ-красок для узкорулонной флексопечати. Для нового направления было построено отдельное производственное здание и организована линия по выпуску УФ-красок.</p>
-          <p class="body-copy">3D-визуализация цеха, представленная в кейсе, была рабочим материалом проекта запуска новой производственной линии - она помогала визуализировать будущую производственную площадку. Это не самостоятельная рекламная иллюстрация, а часть работы над реальным производственным проектом.</p>
-          <a class="tanzor-link" href="https://tanzor.ru/about/proizvodstvo" target="_blank" rel="noopener">О производстве на сайте «Танзор» ↗</a>
-        </div>
-        <div>
-          <img src="../images/cases/tanzor-production-3d.jpg" alt="Рабочая 3D-визуализация цеха">
-          <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">3D-визуализация нового производственного цеха</p>
-        </div>
+    <div class="grid-2" style="margin-top: 60px;">
+      <div>
+        <h3>Запуск нового производства УФ-красок</h3>
+        <p class="body-copy">В 2021 году «Танзор» запустил в Шебекино производство полного цикла цветных УФ-красок для узкорулонной флексопечати. Для нового направления было построено отдельное производственное здание и организована линия по выпуску УФ-красок.</p>
+        <p class="body-copy">3D-визуализация цеха, представленная в кейсе, была рабочим материалом проекта запуска новой производственной линии - она помогала визуализировать будущую производственную площадку. Это не самостоятельная рекламная иллюстрация, а часть работы над реальным производственным проектом.</p>
+        <a class="tanzor-link" href="https://tanzor.ru/about/proizvodstvo" target="_blank" rel="noopener">О производстве на сайте «Танзор» ↗</a>
       </div>
-      <div class="tanzor-callout">
-        <strong>Бизнес-результат проекта</strong>
-        <p>Построено отдельное здание и запущена новая линия по производству УФ-красок. В кейсе показан маркетинговый контекст развития этого направления; строительство и технический запуск не приписываются моей личной ответственности.</p>
+      <div>
+        <img src="../images/cases/tanzor-production-3d.jpg" alt="Рабочая 3D-визуализация цеха" style="height: 350px;">
+        <p style="text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px;">3D-визуализация нового производственного цеха</p>
       </div>
     </div>
 
-    <div class="tanzor-feature">
+    <div class="tanzor-callout" style="margin-top: 60px;">
+      <strong>Бизнес-результат проекта</strong>
+      <p>Построено отдельное здание и запущена новая линия по производству УФ-красок. В кейсе показан маркетинговый контекст развития этого направления; строительство и технический запуск не приписываются моей личной ответственности.</p>
+    </div>
+
+    <div style="margin-top: 60px;">
       <h3>Виртуальная выставка PRINTING EXPO: от концепции до работы с обращениями</h3>
       <p class="body-copy">Для участия SIA «BALTINK» в виртуальной полиграфической выставке PRINTING EXPO я отвечала за подготовку и продвижение виртуального стенда. Это был отдельный выставочный проект, в котором нужно было продумать не только визуальное представление компании, но и пользовательский сценарий, наполнение и дальнейшую коммуникацию с аудиторией.</p>
       <div class="grid-2" style="margin-top: 24px;">
         <div class="card">
-          <div class="card-num">01 · КОНЦЕПЦИЯ</div>
+          <div class="card-num">01 · Концепция</div>
           <h3>Стенд и пользовательский сценарий</h3>
           <p>Прорабатывала концепцию стенда, согласовывала его отдельные элементы и визуальное устройство: расположение экранов, содержание трансляций и то, что посетитель увидит при нажатии на интерактивные элементы.</p>
         </div>
         <div class="card">
-          <div class="card-num">02 · НАПОЛНЕНИЕ</div>
+          <div class="card-num">02 · Наполнение</div>
           <h3>Материалы и презентация продукции</h3>
           <p>Готовила и отбирала материалы для виртуального стенда, продумывала, как представить ассортимент и отдельные продуктовые решения компании профессиональной аудитории.</p>
         </div>
         <div class="card">
-          <div class="card-num">03 · ПРОДВИЖЕНИЕ</div>
+          <div class="card-num">03 · Продвижение</div>
           <h3>Возможности платформы и привлечение аудитории</h3>
           <p>Изучала дополнительные возможности выставочной платформы и варианты размещения информации о компании. Занималась привлечением действующих клиентов на стенд и работой с доступными каналами продвижения.</p>
         </div>
         <div class="card">
-          <div class="card-num">04 · ОБРАЩЕНИЯ</div>
+          <div class="card-num">04 · Обращения</div>
           <h3>Посещаемость и передача запросов</h3>
           <p>Отслеживала посещаемость стенда, фиксировала интерес аудитории и перенаправляла поступавшие запросы профильным технологам, чтобы посетители могли получить профессиональную консультацию.</p>
         </div>
       </div>
-      <div class="tanzor-callout">
+      <div class="tanzor-callout" style="margin-top: 24px;">
         <strong>Моя задача в выставочном проекте</strong>
         <p>Связать презентацию продукции с реальным взаимодействием с аудиторией: привлечь посетителей, помочь им разобраться в предложении компании и обеспечить передачу технических вопросов специалистам.</p>
       </div>
@@ -326,7 +310,10 @@
     </div>
   </section>
 
-  <section class="section-dark">
+</main>
+
+<section class="section-dark">
+  <div class="case-wrap" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="eyebrow eyebrow-dark">04 · Моя роль</div>
     <h2>От стратегии до цифрового выставочного пространства</h2>
     <p class="lead-dark" style="margin-bottom: 24px;">Я руководила маркетинговым направлением: от формулирования задач и разработки цифровой площадки до продуктового продвижения, контента и представления производственной экспертизы.</p>
@@ -345,25 +332,25 @@
         <p>Тематические разделы, отраслевые издания, 3D-стенд на Printing Expo.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <nav class="case-nav">
+<div class="case-wrap" style="padding-top: 0;">
+  <nav class="case-nav" style="margin-top: 0; padding-top: 40px; border-top: 1px solid var(--line);">
     <a href="vystavki.html" class="case-nav-prev">← Предыдущий кейс</a>
     <a href="../cases.html" class="all-cases">Все кейсы</a>
     <a href="method.html" class="case-nav-next">Следующий кейс →</a>
   </nav>
-</main>
 
-<div style="padding: 0 24px;">
-  <div class="cta-banner">
+  <div class="cta-banner" style="margin-top: 60px; margin-bottom: 60px;">
     <h2>Обсудим задачу?</h2>
     <p>Рассматриваю позицию «Руководитель маркетинга и бренда / Head of Marketing &amp; Brand».</p>
     <a href="../contacts.html" class="btn-primary">Связаться</a>
   </div>
 </div>
 
-<footer>
-  © 2026 Марина Гусынина · <a href="../contacts.html">Связаться</a>
+<footer style="border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 13px; text-align: center;">
+  © 2026 Марина Гусынина · <a href="../contacts.html" style="color: var(--accent); text-decoration: underline;">Связаться</a>
 </footer>
 
 </body>
