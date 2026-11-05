@@ -12,144 +12,33 @@
 
   <style>
     /* ========================================
-       CLASSIFIEDS CASE - СТИЛИ
+       ЛОКАЛЬНЫЕ СТИЛИ ТОЛЬКО ДЛЯ УНИКАЛЬНЫХ БЛОКОВ ЭТОЙ СТРАНИЦЫ
+       (Шапка, контейнеры, заголовки и футер тянутся из style.css)
     ======================================== */
 
-    /* --- Базовые настройки и шапка (по скрину 4) --- */
-    .case-page {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .case-page .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .case-page .site-header {
-      border-bottom: 1px solid var(--line);
-      margin-bottom: 40px;
-    }
-
-    .case-page .site-header .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 20px;
-    }
-
-    .case-page .logo {
-      font-size: 22px;
-      font-weight: 700;
-      text-decoration: none;
-      color: var(--text);
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .case-page .logo::before {
-      content: "";
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      background-color: #2c3e50;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    }
-
-    .case-page .main-nav {
-      display: flex;
-      gap: 28px;
-    }
-
-    .case-page .main-nav a {
-      text-decoration: none;
-      color: var(--text-soft);
-      font-size: 15px;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-
-    .case-page .main-nav a:hover {
-      color: var(--text);
-    }
-
-    /* --- Типографика и отступы --- */
-    .case-page section {
-      margin-bottom: 48px; 
-    }
-
-    .case-page h1 {
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      margin: 0 0 20px;
-    }
-
-    .case-page h2 {
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 600;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin: 0 0 16px;
-    }
-
-    .case-page h3 {
-      font-size: 20px;
-      font-weight: 600;
-      margin: 0 0 12px;
-    }
-
-    .case-page p {
-      margin: 0 0 16px;
-      color: var(--text-soft);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .case-page .lead {
-      font-size: 18px;
-      line-height: 1.5;
-      color: var(--text-soft);
-      margin-bottom: 24px;
-    }
-
+    /* --- Кастомные отступы для шапки на этой странице --- */
     .case-page .classifieds-intro {
+      padding-top: 60px;
       margin-bottom: 40px;
     }
 
+    /* --- Стиль номеров секций (лейблы) --- */
     .case-page .classifieds-label {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
       letter-spacing: .08em;
-      text-transform: uppercase;
+      text-transform: none;
       margin-bottom: 12px;
       font-weight: 600;
     }
 
-    /* --- Голубой блок (по скрину 3) --- */
-    .case-page .highlight-blue {
-      background-color: #f0f6fa;
-      border-left: 4px solid #2c76a8;
-      border-radius: 0 8px 8px 0;
-      padding: 24px 30px;
-      margin: 24px 0;
-      font-size: 18px;
-      line-height: 1.5;
-      color: #1a3a52;
-    }
-
+    /* --- Блок STOCK -> LEADS --- */
     .case-page .classifieds-hero-note {
       background: var(--bg-soft);
       border-radius: var(--radius-lg);
       padding: 24px;
       margin: 24px 0;
     }
-
     .case-page .classifieds-hero-note strong {
       display: block;
       font-size: clamp(22px, 3vw, 34px);
@@ -157,124 +46,80 @@
       letter-spacing: -.03em;
       margin-bottom: 10px;
     }
-
     .case-page .classifieds-hero-note span {
       color: var(--muted);
       font-size: 14px;
       letter-spacing: .06em;
     }
 
-    /* --- Сетки --- */
+    /* --- Сетка из 3-х карточек (Зоны ответственности) --- */
     .case-page .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin: 24px 0;
     }
-
     .case-page .card {
       background: var(--bg-soft);
       border-radius: var(--radius);
       padding: 24px;
       border: 1px solid var(--line);
     }
-
     .case-page .card h3 {
       font-size: 18px;
       margin-bottom: 8px;
     }
-
     .case-page .card p {
       font-size: 14px;
       margin: 0;
     }
 
-    /* --- Статистика --- */
-    .case-page .classifieds-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin: 24px 0;
-    }
-
-    .case-page .classifieds-stat {
-      background: var(--bg-soft);
-      border-radius: var(--radius);
-      padding: 24px;
-      border: 1px solid var(--line);
-    }
-
-    .case-page .classifieds-stat-number {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .case-page .classifieds-stat-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .case-page .classifieds-stat-note {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
+    /* --- Блок масштаба (92 / 136 / 105) --- */
     .case-page .classifieds-scale {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin: 24px 0;
     }
-
     .case-page .classifieds-scale-item {
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
     }
-
     .case-page .classifieds-scale-item strong {
       display: block;
       font-size: 32px;
       letter-spacing: -.04em;
       margin-bottom: 8px;
     }
-
     .case-page .classifieds-scale-item span {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.5;
     }
 
+    /* --- Сетка процесса (Разработка / Согласование / Внедрение) --- */
     .case-page .classifieds-process {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin: 24px 0;
     }
-
     .case-page .classifieds-process-item {
       background: var(--bg-soft);
       border-radius: var(--radius);
       padding: 24px;
     }
-
     .case-page .classifieds-process-num {
       color: var(--accent);
       font-size: 13px;
       font-weight: 700;
       margin-bottom: 12px;
     }
-
     .case-page .classifieds-process-item h3 {
       font-size: 18px;
       margin: 0 0 8px;
     }
-
     .case-page .classifieds-process-item p {
       color: var(--text-soft);
       font-size: 14px;
@@ -282,34 +127,50 @@
       margin: 0;
     }
 
-    .case-page .classifieds-highlight {
-      border-left: 3px solid var(--accent);
-      padding: 8px 0 8px 24px;
+    /* --- Статистика (212 / 208 / 216 и т.д.) --- */
+    .case-page .classifieds-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
       margin: 24px 0;
-      font-size: 18px;
-      line-height: 1.5;
-      letter-spacing: -.02em;
+    }
+    .case-page .classifieds-stat {
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--line);
+    }
+    .case-page .classifieds-stat-number {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .case-page .classifieds-stat-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .case-page .classifieds-stat-note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
     }
 
-    /* --- Сетка для картинок (чтобы не были огромными) --- */
+    /* --- Сетка картинок --- */
     .case-page .image-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
       margin: 24px 0;
     }
-
     .case-page .classifieds-image {
       margin: 0;
       background: var(--bg-soft);
       padding: 10px;
       border-radius: var(--radius);
     }
-
-    .case-page .classifieds-image.full-width {
-      grid-column: 1 / -1;
-    }
-
     .case-page .classifieds-image img {
       display: block;
       width: 100%;
@@ -318,7 +179,6 @@
       border: 1px solid var(--line);
       object-fit: cover;
     }
-
     .case-page .classifieds-image figcaption {
       color: var(--muted);
       font-size: 13px;
@@ -327,7 +187,7 @@
       padding: 0 4px;
     }
 
-    /* --- Результат (темный блок) --- */
+    /* --- Темный блок результата --- */
     .case-page .classifieds-result {
       background: var(--bg-dark);
       color: #fff;
@@ -335,27 +195,23 @@
       padding: 40px;
       margin: 40px 0;
     }
-
     .case-page .classifieds-result h2 {
       color: #fff;
     }
-
     .case-page .classifieds-result p {
       color: #d2d2d7;
     }
-
     .case-page .classifieds-result ul {
       padding-left: 20px;
       color: #f5f5f7;
       line-height: 1.8;
       margin: 0;
     }
-
     .case-page .classifieds-result ul li {
       margin-bottom: 8px;
     }
 
-    /* --- CTA (по скрину 2) --- */
+    /* --- CTA блок --- */
     .case-page .classifieds-contact {
       background: var(--bg-dark);
       color: #fff;
@@ -364,18 +220,15 @@
       text-align: center;
       margin: 40px 0;
     }
-
     .case-page .classifieds-contact h2 {
       color: #fff;
       margin-bottom: 12px;
     }
-
     .case-page .classifieds-contact p {
       max-width: 600px;
       margin: 0 auto 24px;
       color: #d2d2d7;
     }
-
     .case-page .classifieds-contact a {
       display: inline-flex;
       align-items: center;
@@ -388,53 +241,12 @@
       font-weight: 600;
       transition: opacity .2s ease;
     }
-
     .case-page .classifieds-contact a:hover {
       opacity: 0.8;
     }
 
-    /* --- Навигация и футер --- */
-    .case-page .classifieds-navigation {
-      display: flex;
-      justify-content: space-between;
-      padding: 24px 0;
-      border-top: 1px solid var(--line);
-      font-size: 14px;
-    }
-
-    .case-page .classifieds-navigation a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .case-page .classifieds-navigation a:hover {
-      color: var(--accent);
-    }
-
-    .case-page .site-footer {
-      padding: 30px 0;
-      border-top: 1px solid var(--line);
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-    .case-page .site-footer a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    /* --- Адаптив --- */
+    /* --- Адаптив для локальных сеток --- */
     @media (max-width: 768px) {
-      .case-page .site-header .container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-      .case-page .main-nav {
-        flex-wrap: wrap;
-        gap: 16px;
-      }
       .case-page .grid-3,
       .case-page .classifieds-stats,
       .case-page .classifieds-scale,
@@ -450,7 +262,7 @@
 
 <main class="case-page">
 
-<!-- HEADER -->
+  <!-- HEADER (Тянется из style.css) -->
   <header>
     <div class="nav">
       <a href="../index.html" class="brand">
@@ -608,7 +420,7 @@
         на складе, не всегда получали необходимый приоритет.
       </p>
 
-      <!-- Тот самый абзац, выделенный голубым по вашему запросу -->
+      <!-- Тот самый абзац, выделенный голубым -->
       <div class="integration">
         Нужно было перейти от управления объявлениями
         к управлению рекламным портфелем с учётом наличия
@@ -898,7 +710,7 @@
 
   <!-- CASE NAVIGATION -->
   <section style="padding: 0;">
-    <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+    <div class="container" style="padding-top: 0; padding-bottom: 40px;">
       <nav class="case-nav">
         <a href="system.html" class="case-nav-prev">← Предыдущий</a>
         <a href="../cases.html">Все кейсы</a>
