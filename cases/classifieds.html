@@ -450,18 +450,18 @@
 
 <main class="case-page">
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="../index.html">
-        Марина Гусынина
+<!-- HEADER -->
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand">
+        <span class="brand-name">Марина Гусынина</span>
       </a>
-      <nav class="main-nav">
-        <a href="../index.html#about">Обо мне</a>
-        <a href="../cases.html">Кейсы</a>
-        <a href="../index.html#experience">Опыт</a>
-        <a href="../contacts.html">Контакты</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">Обо мне</a></li>
+        <li><a href="../cases.html">Кейсы</a></li>
+        <li><a href="../index.html#experience">Опыт</a></li>
+        <li><a href="../contacts.html">Контакты</a></li>
+      </ul>
     </div>
   </header>
 
@@ -603,7 +603,7 @@
       </p>
 
       <!-- Тот самый абзац, выделенный голубым по вашему запросу -->
-      <div class="highlight-blue">
+      <div class="integration">
         Нужно было перейти от управления объявлениями
         к управлению рекламным портфелем с учётом наличия
         автомобилей и приоритетов продаж.
@@ -892,32 +892,23 @@
   </section>
 
   <!-- CASE NAVIGATION -->
-  <section class="section-block" style="margin-bottom: 0;">
-    <div class="container">
-      <div class="classifieds-navigation">
-        <a href="system.html">
-          ← Предыдущий кейс
-        </a>
-        <a href="../cases.html">
-          Все кейсы
-        </a>
-        <a href="oktoprint.html">
-          Следующий кейс →
-        </a>
-      </div>
+  <section style="padding: 0;">
+    <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
+      <nav class="case-nav">
+        <a href="system.html" class="case-nav-prev">← Предыдущий</a>
+        <a href="../cases.html">Все кейсы</a>
+        <a href="oktoprint.html" class="case-nav-next">Следующий →</a>
+      </nav>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container">
-      <p>
-        © 2026 Марина Гусынина ·
+  <footer>
+    © 2026 Марина Гусынина ·
         <a href="../contacts.html">Связаться</a>
-      </p>
-    </div>
   </footer>
-
+  
+  <script src="../script.js"></script>
 </main>
 
 </body>
