@@ -461,6 +461,12 @@ footer a:hover { text-decoration: underline; }
 .case-page .integration strong {
   color: #1e3c66;
 }
+/* ===== КОМПАКТНЫЕ ОТСТУПЫ ДЛЯ КЕЙСОВ ===== */
+.case-page .container,
+.case-page .container-wide {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}  
 
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
