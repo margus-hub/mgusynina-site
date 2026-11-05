@@ -12,28 +12,142 @@
 
   <style>
     /* ========================================
-       CLASSIFIEDS CASE
-       Стили только для этой страницы
+       CLASSIFIEDS CASE - СТИЛИ
     ======================================== */
 
+    /* --- Базовые настройки и шапка (по скрину 4) --- */
+    .case-page {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .case-page .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .case-page .site-header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 40px;
+    }
+
+    .case-page .site-header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+    }
+
+    .case-page .logo {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .case-page .logo::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background-color: #2c3e50;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    }
+
+    .case-page .main-nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    .case-page .main-nav a {
+      text-decoration: none;
+      color: var(--text-soft);
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .case-page .main-nav a:hover {
+      color: var(--text);
+    }
+
+    /* --- Типографика и отступы --- */
+    .case-page section {
+      margin-bottom: 48px; 
+    }
+
+    .case-page h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 20px;
+    }
+
+    .case-page h2 {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+    }
+
+    .case-page h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 12px;
+    }
+
+    .case-page p {
+      margin: 0 0 16px;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .case-page .lead {
+      font-size: 18px;
+      line-height: 1.5;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+    }
+
     .case-page .classifieds-intro {
-      max-width: 850px;
-      margin-bottom: 56px;
+      margin-bottom: 40px;
     }
 
     .case-page .classifieds-label {
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: .08em;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    /* --- Голубой блок (по скрину 3) --- */
+    .case-page .highlight-blue {
+      background-color: #f0f6fa;
+      border-left: 4px solid #2c76a8;
+      border-radius: 0 8px 8px 0;
+      padding: 24px 30px;
+      margin: 24px 0;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #1a3a52;
     }
 
     .case-page .classifieds-hero-note {
       background: var(--bg-soft);
       border-radius: var(--radius-lg);
-      padding: 30px;
-      margin: 36px 0 56px;
+      padding: 24px;
+      margin: 24px 0;
     }
 
     .case-page .classifieds-hero-note strong {
@@ -50,45 +164,71 @@
       letter-spacing: .06em;
     }
 
+    /* --- Сетки --- */
+    .case-page .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .case-page .card {
+      background: var(--bg-soft);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--line);
+    }
+
+    .case-page .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .case-page .card p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* --- Статистика --- */
     .case-page .classifieds-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin: 30px 0;
+      margin: 24px 0;
     }
 
     .case-page .classifieds-stat {
       background: var(--bg-soft);
       border-radius: var(--radius);
-      padding: 26px;
+      padding: 24px;
+      border: 1px solid var(--line);
     }
 
     .case-page .classifieds-stat-number {
-      font-size: clamp(30px, 4vw, 46px);
-      font-weight: 650;
-      letter-spacing: -.05em;
-      line-height: 1.1;
-      margin-bottom: 10px;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
       color: var(--text);
     }
 
     .case-page .classifieds-stat-title {
       font-size: 15px;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .case-page .classifieds-stat-note {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.4;
     }
 
     .case-page .classifieds-scale {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin: 28px 0;
+      margin: 24px 0;
     }
 
     .case-page .classifieds-scale-item {
@@ -114,7 +254,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin: 30px 0;
+      margin: 24px 0;
     }
 
     .case-page .classifieds-process-item {
@@ -127,12 +267,12 @@
       color: var(--accent);
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
     }
 
     .case-page .classifieds-process-item h3 {
-      font-size: 19px;
-      margin: 0 0 10px;
+      font-size: 18px;
+      margin: 0 0 8px;
     }
 
     .case-page .classifieds-process-item p {
@@ -145,37 +285,55 @@
     .case-page .classifieds-highlight {
       border-left: 3px solid var(--accent);
       padding: 8px 0 8px 24px;
-      margin: 32px 0;
-      font-size: 20px;
+      margin: 24px 0;
+      font-size: 18px;
       line-height: 1.5;
       letter-spacing: -.02em;
     }
 
+    /* --- Сетка для картинок (чтобы не были огромными) --- */
+    .case-page .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
     .case-page .classifieds-image {
-      margin: 32px 0;
+      margin: 0;
+      background: var(--bg-soft);
+      padding: 10px;
+      border-radius: var(--radius);
+    }
+
+    .case-page .classifieds-image.full-width {
+      grid-column: 1 / -1;
     }
 
     .case-page .classifieds-image img {
       display: block;
       width: 100%;
       height: auto;
-      border-radius: var(--radius);
+      border-radius: 6px;
       border: 1px solid var(--line);
+      object-fit: cover;
     }
 
     .case-page .classifieds-image figcaption {
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
-      margin-top: 12px;
+      line-height: 1.4;
+      margin-top: 10px;
+      padding: 0 4px;
     }
 
+    /* --- Результат (темный блок) --- */
     .case-page .classifieds-result {
       background: var(--bg-dark);
       color: #fff;
       border-radius: var(--radius-lg);
-      padding: clamp(28px, 5vw, 52px);
-      margin: 48px 0;
+      padding: 40px;
+      margin: 40px 0;
     }
 
     .case-page .classifieds-result h2 {
@@ -190,28 +348,32 @@
       padding-left: 20px;
       color: #f5f5f7;
       line-height: 1.8;
+      margin: 0;
     }
 
-    /* Обновленный блок CTA под скриншот */
+    .case-page .classifieds-result ul li {
+      margin-bottom: 8px;
+    }
+
+    /* --- CTA (по скрину 2) --- */
     .case-page .classifieds-contact {
       background: var(--bg-dark);
       color: #fff;
       border-radius: var(--radius-lg);
-      padding: clamp(30px, 6vw, 64px);
-      margin: 64px 0 40px;
+      padding: 50px 30px;
       text-align: center;
+      margin: 40px 0;
     }
 
     .case-page .classifieds-contact h2 {
-      margin-bottom: 16px;
       color: #fff;
+      margin-bottom: 12px;
     }
 
     .case-page .classifieds-contact p {
-      max-width: 620px;
-      margin: 0 auto 26px;
+      max-width: 600px;
+      margin: 0 auto 24px;
       color: #d2d2d7;
-      line-height: 1.65;
     }
 
     .case-page .classifieds-contact a {
@@ -221,8 +383,8 @@
       background: #fff;
       color: var(--bg-dark);
       text-decoration: none;
-      border-radius: 999px;
-      padding: 13px 24px;
+      border-radius: 99px;
+      padding: 14px 28px;
       font-weight: 600;
       transition: opacity .2s ease;
     }
@@ -231,11 +393,11 @@
       opacity: 0.8;
     }
 
+    /* --- Навигация и футер --- */
     .case-page .classifieds-navigation {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      padding: 28px 0;
+      padding: 24px 0;
       border-top: 1px solid var(--line);
       font-size: 14px;
     }
@@ -243,21 +405,42 @@
     .case-page .classifieds-navigation a {
       color: var(--text);
       text-decoration: none;
+      font-weight: 500;
     }
 
     .case-page .classifieds-navigation a:hover {
       color: var(--accent);
     }
 
+    .case-page .site-footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .case-page .site-footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    /* --- Адаптив --- */
     @media (max-width: 768px) {
+      .case-page .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .case-page .main-nav {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .case-page .grid-3,
       .case-page .classifieds-stats,
       .case-page .classifieds-scale,
-      .case-page .classifieds-process {
+      .case-page .classifieds-process,
+      .case-page .image-grid {
         grid-template-columns: 1fr;
-      }
-
-      .case-page .classifieds-navigation {
-        flex-wrap: wrap;
       }
     }
   </style>
@@ -270,43 +453,34 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="container">
-
       <a class="logo" href="../index.html">
         Марина Гусынина
       </a>
-
       <nav class="main-nav">
         <a href="../index.html#about">Обо мне</a>
         <a href="../cases.html">Кейсы</a>
         <a href="../index.html#experience">Опыт</a>
         <a href="../contacts.html">Контакты</a>
       </nav>
-
     </div>
   </header>
-
 
   <!-- HERO -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-intro">
-
         <div class="classifieds-label">
           Case 03 · Frank Auto · 2025-2026
         </div>
-
         <h1>
           Classifieds: продвижение, связанное со stock
         </h1>
-
         <p class="lead">
           Управление размещением автомобилей на Avito и Auto.ru.
           Связка рекламных бюджетов с реальными остатками автомобилей,
           их наличием и локациями - чтобы продвигать то, что действительно
           можно продать сегодня.
         </p>
-
       </div>
 
       <div class="classifieds-hero-note">
@@ -316,72 +490,58 @@
           а не с абстрактным трафиком
         </span>
       </div>
-
     </div>
   </section>
-
 
   <!-- PROJECT SCALE -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         01 · Масштаб проекта
       </div>
-
       <h2>333 позиции в рекламном портфеле</h2>
-
       <p class="lead">
         Управление размещением охватывало автомобили в наличии,
         а также машины в пути и доступные под заказ.
       </p>
 
       <div class="classifieds-scale">
-
         <div class="classifieds-scale-item">
           <strong>92</strong>
           <span>
             Новых автомобиля в первом рекламном аккаунте
           </span>
         </div>
-
         <div class="classifieds-scale-item">
           <strong>136</strong>
           <span>
             Новых автомобилей во втором рекламном аккаунте
           </span>
         </div>
-
         <div class="classifieds-scale-item">
           <strong>105</strong>
           <span>
             Автомобилей в пути и доступных под заказ
           </span>
         </div>
-
       </div>
 
       <p>
         География продвижения - Москва и Московская область.
         Основные локации размещения: Вешки и Новая Рига.
       </p>
-
     </div>
   </section>
-
 
   <!-- DIRECTIONS -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         02 · Зоны ответственности
       </div>
-
       <h2>От стратегии размещения до контроля результата</h2>
 
       <div class="grid-3">
-
         <div class="card">
           <h3>Модельный микс</h3>
           <p>
@@ -389,7 +549,6 @@
             приоритетных моделей и автомобилей для продвижения.
           </p>
         </div>
-
         <div class="card">
           <h3>Приоритеты</h3>
           <p>
@@ -397,7 +556,6 @@
             нахождения на складе 45-60+ дней.
           </p>
         </div>
-
         <div class="card">
           <h3>Контент</h3>
           <p>
@@ -405,7 +563,6 @@
             анализ конкурентного предложения.
           </p>
         </div>
-
         <div class="card">
           <h3>Медийная реклама</h3>
           <p>
@@ -413,7 +570,6 @@
             концепция, креативы, настройка и бюджет 300 000 ₽.
           </p>
         </div>
-
         <div class="card">
           <h3>Управление ставками</h3>
           <p>
@@ -421,7 +577,6 @@
             самостоятельная корректировка ставок в аукционе.
           </p>
         </div>
-
         <div class="card">
           <h3>Контроль</h3>
           <p>
@@ -429,23 +584,17 @@
             обработки обращений менеджерами.
           </p>
         </div>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- BUSINESS CHALLENGE -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         03 · Бизнес-задача
       </div>
-
       <h2>Связать продвижение с реальными остатками</h2>
-
       <p>
         Продвижение на классифайдах не было системно связано
         с реальными остатками. Рекламировались модели, которых
@@ -453,26 +602,22 @@
         на складе, не всегда получали необходимый приоритет.
       </p>
 
-      <div class="classifieds-highlight">
+      <!-- Тот самый абзац, выделенный голубым по вашему запросу -->
+      <div class="highlight-blue">
         Нужно было перейти от управления объявлениями
         к управлению рекламным портфелем с учётом наличия
         автомобилей и приоритетов продаж.
       </div>
-
     </div>
   </section>
-
 
   <!-- PROCESS -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         04 · Управление процессом
       </div>
-
       <h2>Инициировала и выстроила взаимодействие отделов</h2>
-
       <p>
         Я предложила новую схему взаимодействия между отделами
         продаж, маркетингом и агентством. Самостоятельно разработала
@@ -482,7 +627,6 @@
       </p>
 
       <div class="classifieds-process">
-
         <div class="classifieds-process-item">
           <div class="classifieds-process-num">01</div>
           <h3>Разработка</h3>
@@ -491,7 +635,6 @@
             и последовательность работы с объявлениями.
           </p>
         </div>
-
         <div class="classifieds-process-item">
           <div class="classifieds-process-num">02</div>
           <h3>Согласование</h3>
@@ -500,7 +643,6 @@
             ответственность участников и сроки выполнения.
           </p>
         </div>
-
         <div class="classifieds-process-item">
           <div class="classifieds-process-num">03</div>
           <h3>Внедрение</h3>
@@ -509,79 +651,68 @@
             между продажами, маркетингом и агентством.
           </p>
         </div>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- MANAGEMENT -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         05 · Ежедневное управление
       </div>
-
       <h2>Управление размещением и рекламными ставками</h2>
-
       <p>
         Я управляла размещением автомобилей по локациям
         Вешки и Новая Рига. Еженедельно согласовывала
         с продажами модельный микс и определяла приоритетные
         автомобили для дальнейшего продвижения.
       </p>
-
       <p>
         По приоритетным моделям не только организовывала
         поднятия и продвижение, но и самостоятельно регулировала
         ставки в аукционе. Это позволяло управлять стоимостью
         трафика и получать целевые обращения.
       </p>
-
       <p>
         Размещение постоянно обновлялось вслед за изменением
         стока: проданные автомобили снимались с публикации,
         новые машины добавлялись в рекламный портфель.
       </p>
 
-      <figure class="classifieds-image">
-        <img
-          src="../images/cases/classifieds-1.jpg"
-          alt="Страница дилера на автомобильном классифайде"
-          loading="lazy"
-        >
-        <figcaption>
-          Размещение автомобилей дилера на автомобильных классифайдах.
-        </figcaption>
-      </figure>
-
-      <figure class="classifieds-image">
-        <img
-          src="../images/cases/classifieds-2.jpg"
-          alt="Профиль дилера на Avito"
-          loading="lazy"
-        >
-        <figcaption>
-          Профиль дилера и рекламные объявления на Avito.
-        </figcaption>
-      </figure>
-
+      <!-- Картинки в сетке по 2 штуки -->
+      <div class="image-grid">
+        <figure class="classifieds-image">
+          <img
+            src="../images/cases/classifieds-1.jpg"
+            alt="Страница дилера на автомобильном классифайде"
+            loading="lazy"
+          >
+          <figcaption>
+            Размещение автомобилей дилера на автомобильных классифайдах.
+          </figcaption>
+        </figure>
+        <figure class="classifieds-image">
+          <img
+            src="../images/cases/classifieds-2.jpg"
+            alt="Профиль дилера на Avito"
+            loading="lazy"
+          >
+          <figcaption>
+            Профиль дилера и рекламные объявления на Avito.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
-
 
   <!-- ANALYTICS -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         06 · Аналитика
       </div>
-
       <h2>Управление через данные</h2>
-
       <p>
         Настроила аналитику внутри кабинетов Avito и Auto.ru.
         Контролировала конверсию из просмотра в контакт,
@@ -591,9 +722,7 @@
       </p>
 
       <h3>Динамика активных объявлений</h3>
-
       <div class="classifieds-stats">
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">212</div>
           <div class="classifieds-stat-title">Первый период</div>
@@ -601,7 +730,6 @@
             Активные объявления
           </div>
         </div>
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">208</div>
           <div class="classifieds-stat-title">Второй период</div>
@@ -609,7 +737,6 @@
             Активные объявления
           </div>
         </div>
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">216</div>
           <div class="classifieds-stat-title">Третий период</div>
@@ -617,13 +744,10 @@
             Активные объявления
           </div>
         </div>
-
       </div>
 
       <h3>Показатели последнего отчётного периода</h3>
-
       <div class="classifieds-stats">
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">204 057</div>
           <div class="classifieds-stat-title">Просмотры</div>
@@ -631,7 +755,6 @@
             Просмотры объявлений
           </div>
         </div>
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">890</div>
           <div class="classifieds-stat-title">Контакты</div>
@@ -639,7 +762,6 @@
             Контакты пользователей
           </div>
         </div>
-
         <div class="classifieds-stat">
           <div class="classifieds-stat-number">+104,13%</div>
           <div class="classifieds-stat-title">Динамика контактов</div>
@@ -647,36 +769,32 @@
             Изменение относительно предыдущего периода
           </div>
         </div>
-
       </div>
 
-      <figure class="classifieds-image">
-        <img
-          src="../images/cases/classifieds-3.jpg"
-          alt="Отчёт аналитики продвижения автомобилей на классифайдах"
-          loading="lazy"
-        >
-        <figcaption>
-          Отчёт по эффективности размещения: объявления,
-          инвестиции, просмотры, избранное, контакты,
-          звонки и стоимость целевого действия.
-        </figcaption>
-      </figure>
-
+      <div class="image-grid" style="grid-template-columns: 1fr;">
+        <figure class="classifieds-image">
+          <img
+            src="../images/cases/classifieds-3.jpg"
+            alt="Отчёт аналитики продвижения автомобилей на классифайдах"
+            loading="lazy"
+          >
+          <figcaption>
+            Отчёт по эффективности размещения: объявления,
+            инвестиции, просмотры, избранное, контакты,
+            звонки и стоимость целевого действия.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
-
 
   <!-- COMPETITIVE ANALYSIS -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         07 · Конкурентный анализ
       </div>
-
       <h2>Понимание конкурентной среды</h2>
-
       <p>
         Отдельно вела конкурентный анализ в разрезе Москвы
         и Московской области. Оценивала цены и активность
@@ -685,32 +803,29 @@
         переплачивать за трафик.
       </p>
 
-      <figure class="classifieds-image">
-        <img
-          src="../images/cases/classifieds-4.jpg"
-          alt="Конкурентный анализ автомобильных объявлений"
-          loading="lazy"
-        >
-        <figcaption>
-          Анализ конкурентного предложения и активности
-          автомобильных дилеров в регионе продвижения.
-        </figcaption>
-      </figure>
-
+      <div class="image-grid" style="grid-template-columns: 1fr;">
+        <figure class="classifieds-image">
+          <img
+            src="../images/cases/classifieds-4.jpg"
+            alt="Конкурентный анализ автомобильных объявлений"
+            loading="lazy"
+          >
+          <figcaption>
+            Анализ конкурентного предложения и активности
+            автомобильных дилеров в регионе продвижения.
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </section>
-
 
   <!-- MEDIA ADVERTISING -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-label">
         08 · Медийная реклама
       </div>
-
       <h2>Запуск нового рекламного формата Avito</h2>
-
       <p>
         Самостоятельно запустила новый на тот момент формат
         медийной рекламы Avito с бюджетом 300 000 ₽.
@@ -722,112 +837,84 @@
         Полный цикл работы: от идеи и рекламной концепции
         до настройки и контроля размещения.
       </div>
-
     </div>
   </section>
-
 
   <!-- RESULT -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-result">
-
-        <div class="classifieds-label">
+        <div class="classifieds-label" style="color: rgba(255,255,255,0.6);">
           09 · Результат
         </div>
-
         <h2>Продвижение стало частью бизнес-процесса</h2>
-
         <p>
           Размещение стало управляемым процессом,
           связанным с фактическим наличием автомобилей
           и приоритетами продаж.
         </p>
-
         <ul>
           <li>
             Разработала и внедрила схему взаимодействия
             продаж, маркетинга и агентства.
           </li>
-
           <li>
             Организовала управление рекламным портфелем
             с учётом реального стока и локаций.
           </li>
-
           <li>
             Внедрила регулярный контроль эффективности
             размещения и рекламных инвестиций.
           </li>
-
           <li>
             Связала продвижение автомобилей с задачами
             отдела продаж и коммерческими приоритетами.
           </li>
         </ul>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- CONTACT CTA -->
   <section class="section-block">
     <div class="container">
-
       <div class="classifieds-contact">
-
         <h2>Обсудим задачу?</h2>
-
         <p>
-          Если вашему бизнесу нужно выстроить маркетинг, усилить продвижение или связь рекламные инвестиции с коммерческими результатами - звоните, обсудим проект.
+          Открыта к предложениям на позиции руководителя маркетинга,
+          Senior Brand Manager или CMO.
         </p>
-
         <a href="../contacts.html">
           Связаться <span aria-hidden="true">→</span>
         </a>
-
       </div>
-
     </div>
   </section>
 
-
   <!-- CASE NAVIGATION -->
-  <section class="section-block">
+  <section class="section-block" style="margin-bottom: 0;">
     <div class="container">
-
       <div class="classifieds-navigation">
-
         <a href="system.html">
           ← Предыдущий кейс
         </a>
-
         <a href="../cases.html">
           Все кейсы
         </a>
-
         <a href="oktoprint.html">
           Следующий кейс →
         </a>
-
       </div>
-
     </div>
   </section>
-
 
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-
       <p>
         © 2026 Марина Гусынина ·
         <a href="../contacts.html">Связаться</a>
       </p>
-
     </div>
   </footer>
 
