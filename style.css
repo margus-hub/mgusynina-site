@@ -449,6 +449,19 @@ footer a:hover { text-decoration: underline; }
 .case-page .section-dark .card h3 { color: #fff; }
 .case-page .section-dark .card p { color: #c8c5bf; }
 
+.case-page .integration {
+  margin-top: 16px;
+  border-radius: 16px;
+  padding: 20px 24px;
+  background: #e0eaf7;
+  color: #25466f;
+  font-size: 15px;
+}
+
+.case-page .integration strong {
+  color: #1e3c66;
+}
+
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
   .case-page .process-step:not(:last-child)::after { display: none; }
