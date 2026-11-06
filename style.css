@@ -463,13 +463,14 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   ФИНАЛЬНЫЙ БЛОК: ИСПРАВЛЕНИЕ ВСЕХ КЕЙСОВ (CLASSIFIEDS, SYSTEM, ROX и др.)
+   ФИНАЛЬНЫЙ БЛОК: ИСПРАВЛЕНИЕ ВСЕХ КЕЙСОВ
    ============================================================ */
 
 /* 1. ГЛАВНЫЕ ЗАГОЛОВКИ В КЕЙСАХ — ЧЕРНЫЕ */
 .case-page h1,
 .case-page h2,
-.case-page h3 {
+.case-page h3,
+.case-page h4 {
   color: var(--text) !important;
 }
 
@@ -490,10 +491,11 @@ footer a:hover { text-decoration: underline; }
   text-transform: uppercase !important;
 }
 
-/* 3. КОМПАКТНЫЕ ОТСТУПЫ */
+/* 3. КОМПАКТНЫЕ ОТСТУПЫ (включая .case-wrap, который был на Танзоре) */
 .case-page .container,
 .case-page .container-wide,
-.case-page .wrap {
+.case-page .wrap,
+.case-page .case-wrap {
   padding-top: 30px !important;
   padding-bottom: 30px !important;
   max-width: 1120px;
@@ -506,7 +508,13 @@ footer a:hover { text-decoration: underline; }
   padding-top: 20px !important; 
 }
 
-/* 4. В ТЕМНЫХ БЛОКАХ ЗАГОЛОВКИ — БЕЛЫЕ */
+/* 4. В ТЕМНЫХ БЛОКАХ ВСЁ БЕЛОЕ (заголовки и текст) */
+.case-page .classifieds-result,
+.case-page .classifieds-contact,
+.case-page .dark-section,
+.case-page .cta-banner {
+  color: #ffffff !important; /* Базовый белый цвет */
+}
 .case-page .classifieds-result h2,
 .case-page .classifieds-contact h2,
 .case-page .dark-section h2,
@@ -592,7 +600,7 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ============================================================
-   ПОЛНОШИРИННАЯ ТЕМНАЯ СЕКЦИЯ (Только для блока "Моя роль")
+   ПОЛНОШИРИННАЯ ТЕМНАЯ СЕКЦИЯ (Блок "Моя роль")
    ============================================================ */
 
 .case-page .dark-section-full {
@@ -606,6 +614,7 @@ footer a:hover { text-decoration: underline; }
   color: #fff !important;
 }
 
+/* Центрируем контент */
 .case-page .dark-section-full > .container,
 .case-page .dark-section-full > .wrap, 
 .case-page .dark-section-full > .case-wrap {
@@ -615,6 +624,7 @@ footer a:hover { text-decoration: underline; }
   padding-right: 24px !important;
 }
 
+/* Мелкий лейбл (04 · Моя роль) — СИНИЙ */
 .case-page .dark-section-full .eyebrow {
   color: var(--accent) !important;
   text-transform: uppercase !important;
@@ -623,21 +633,37 @@ footer a:hover { text-decoration: underline; }
   margin-bottom: 16px !important;
   display: block !important;
 }
-.case-page .dark-section-full h2 {
+
+/* ВСЕ заголовки внутри блока (h2, h3, h4) — БЕЛЫЕ */
+.case-page .dark-section-full h2,
+.case-page .dark-section-full h3,
+.case-page .dark-section-full h4 {
   color: #ffffff !important;
 }
-.case-page .dark-section-full p {
+
+/* ВЕСЬ текст (p, li) — СВЕТЛО-СЕРЫЙ */
+.case-page .dark-section-full p,
+.case-page .dark-section-full li {
   color: #a1a1a6 !important;
 }
-.case-page .dark-section-full .role-card {
+
+/* Карточки внутри (Бренд-менеджмент и т.д.) */
+.case-page .dark-section-full .role-card,
+.case-page .dark-section-full .pillar,
+.case-page .dark-section-full .card {
   background: #2a2a2d !important;
   border-radius: 20px !important;
   padding: 32px !important;
 }
 
+/* Адаптив для этого блока */
 @media (max-width: 900px) {
   .case-page .dark-section-full {
     padding: 60px 24px !important;
+  }
+  .case-page .dark-section-full .role-grid,
+  .case-page .dark-section-full .pillars {
+    grid-template-columns: 1fr !important;
   }
 }
 
