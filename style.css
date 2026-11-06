@@ -607,10 +607,12 @@ footer a:hover { text-decoration: underline; }
 }
 
 .case-page .dark-section-full > .container,
-.case-page .dark-section-full > .wrap {
+.case-page .dark-section-full > .wrap, 
+.case-page .dark-section-full > .case-wrap {
   max-width: 1120px !important;
   margin: 0 auto !important;
-  padding: 0 !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
 }
 
 .case-page .dark-section-full .eyebrow {
