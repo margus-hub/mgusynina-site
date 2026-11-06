@@ -296,6 +296,47 @@
         grid-template-columns: 1fr;
       }
     }
+        /* ==========================================
+       ФИКС ДЛЯ КЕЙСА 03 (Цвета и кнопки)
+       ========================================== */
+
+    /* 1. Делаем заголовки-лейблы СИНИМИ */
+    .case-page .classifieds-label {
+      color: var(--accent) !important; 
+    }
+
+    /* 2. Принудительно задаем серый фон для крайних кнопок */
+    .case-page .case-nav a,
+    .case-page .case-nav a:link,
+    .case-page .case-nav a:visited {
+      background-color: var(--bg-soft) !important; 
+      color: var(--ink) !important;
+      padding: 12px 24px !important;
+      border-radius: 980px !important;
+      font-weight: 600 !important;
+      text-decoration: none !important;
+      transition: all 0.2s ease !important;
+    }
+
+    /* 3. Наведение: синий фон, белый текст */
+    .case-page .case-nav a:hover,
+    .case-page .case-nav a:focus {
+      background-color: var(--accent) !important;
+      color: #ffffff !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* 4. Центральная кнопка "Все кейсы" - она должна быть прозрачной */
+    .case-page .case-nav a:nth-child(2) {
+      background-color: transparent !important;
+      color: var(--muted) !important;
+    }
+    
+    .case-page .case-nav a:nth-child(2):hover {
+      background-color: transparent !important;
+      color: var(--accent) !important;
+      transform: none !important;
+    }
   </style>
 </head>
 
