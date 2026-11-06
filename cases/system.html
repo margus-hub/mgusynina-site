@@ -159,6 +159,46 @@
       .case-nav { flex-direction: column; align-items: stretch; text-align: center; }
       .dark-section { padding: 60px 0; margin: 40px 0; }
     }
+    /* ==========================================
+   ЖЕСТКИЙ ФИКС ДЛЯ КНОПОК НАВИГАЦИИ
+   ========================================== */
+
+/* 1. Делаем стандартный серый фон для кнопок */
+.case-nav a, 
+.case-nav a:link,
+.case-nav a:visited {
+  background-color: var(--bg-soft) !important;
+  color: var(--ink) !important; /* Темный текст */
+  padding: 12px 24px !important;
+  border-radius: 980px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+/* 2. При наведении: синий фон, БЕЛЫЙ ТЕКСТ */
+.case-nav a:hover,
+.case-nav a:focus {
+  background-color: var(--accent) !important; /* Синий фон */
+  color: #ffffff !important; /* Белый текст */
+  transform: translateY(-2px) !important;
+}
+
+/* 3. Центральная кнопка "Все кейсы" - она прозрачная */
+.case-nav a:nth-child(2),
+.case-nav a:nth-child(2):link,
+.case-nav a:nth-child(2):visited {
+  background-color: transparent !important;
+  color: var(--muted) !important;
+}
+
+/* 4. "Все кейсы" при наведении - синий текст, прозрачный фон */
+.case-nav a:nth-child(2):hover,
+.case-nav a:nth-child(2):focus {
+  background-color: transparent !important;
+  color: var(--accent) !important;
+  transform: none !important;
+}
   </style>
 </head>
 <body>
