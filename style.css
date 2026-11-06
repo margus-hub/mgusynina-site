@@ -461,6 +461,58 @@ footer a:hover { text-decoration: underline; }
 .case-page .integration strong {
   color: #1e3c66;
 }
+/* ============================================================
+   ФИКС ДЛЯ БЛОКА "МОЯ РОЛЬ" (Полноширинная темная секция)
+   ============================================================ */
+
+/* 1. Задаем черный фон на всю ширину экрана */
+.case-page .dark-section-full {
+  width: 100vw !important;
+  max-width: 100% !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  background-color: var(--bg-dark) !important;
+  color: #ffffff !important;
+  border-radius: 0 !important;
+}
+
+/* 2. Центрируем контент внутри (чтобы текст не прилипал к краям) */
+.case-page .dark-section-full > .case-wrap {
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+/* 3. Заголовок (h2) — БЕЛЫЙ */
+.case-page .dark-section-full h2 {
+  color: #ffffff !important;
+}
+
+/* 4. Текст (lead-dark) — СВЕТЛО-СЕРЫЙ */
+.case-page .dark-section-full .lead-dark {
+  color: #a1a1a6 !important;
+}
+
+/* 5. Мелкий лейбл (04 · Моя роль) — СИНИЙ (он уже синий, но зафиксируем) */
+.case-page .dark-section-full .eyebrow {
+  color: var(--accent) !important;
+}
+
+/* 6. Карточки внутри (pillar) — темно-серый фон, белые заголовки */
+.case-page .dark-section-full .pillar {
+  background-color: #2a2a2d !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 32px 28px !important;
+}
+
+.case-page .dark-section-full .pillar h3 {
+  color: #ffffff !important;
+}
+
+.case-page .dark-section-full .pillar p {
+  color: #c8c5bf !important;
+}
 
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
