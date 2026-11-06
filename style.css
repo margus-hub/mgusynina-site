@@ -468,6 +468,51 @@ footer a:hover { text-decoration: underline; }
   padding-bottom: 40px !important;
 }  
 
+/* ===== ТОЧЕЧНАЯ ПРАВКА ОТСТУПОВ, ЦВЕТОВ И НАВИГАЦИИ ДЛЯ КЕЙСОВ ===== */
+/* 1. Красим заголовки в синий (перебиваем глобальный черный) */
+.case-page h1, 
+.case-page h2, 
+.case-page h3 {
+  color: var(--accent) !important;
+}
+
+/* 2. Убираем двойные отступы между секциями */
+.case-page section {
+  margin-bottom: 20px !important; /* Уменьшаем отступ между блоками */
+}
+
+/* 3. Убираем лишний воздух вокруг заголовков */
+.case-page h2 {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+/* 4. Чиним навигацию внизу (чтобы кнопки не растягивались на всю ширину) */
+.case-page .case-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-top: 0 !important;
+  padding-top: 20px !important;
+}
+
+.case-page .case-nav a {
+  display: inline-flex !important;
+  width: auto !important; /* Убираем растягивание на 100% */
+  padding: 12px 24px !important;
+  background: var(--bg-soft) !important;
+  border-radius: 99px !important;
+  font-size: 15px !important;
+}
+
+/* Центральная кнопка "Все кейсы" без фона */
+.case-page .case-nav a:nth-child(2) {
+  background: transparent !important;
+  color: var(--muted) !important;
+}
+
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
   .case-page .process-step:not(:last-child)::after { display: none; }
