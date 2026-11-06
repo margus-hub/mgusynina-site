@@ -534,9 +534,6 @@ footer a:hover { text-decoration: underline; }
   justify-content: space-between !important;
   align-items: center !important;
   gap: 16px !important;
-  margin-top: 20px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid var(--line) !important;
   flex-wrap: wrap;
 }
 .case-page .case-nav a {
@@ -602,7 +599,7 @@ footer a:hover { text-decoration: underline; }
 /* ============================================================
    ПОЛНОШИРИННАЯ ТЕМНАЯ СЕКЦИЯ (Блок "Моя роль")
    ============================================================ */
-
+/* 1. Делаем блок широким и черным */
 .case-page .dark-section-full {
   width: 100vw !important;
   max-width: 100% !important;
@@ -611,10 +608,10 @@ footer a:hover { text-decoration: underline; }
   border-radius: 0 !important;
   padding: 80px 24px !important;
   background: var(--bg-dark) !important;
-  color: #fff !important;
+  color: #fff !important; /* Базовый белый цвет для всего текста */
 }
 
-/* Центрируем контент */
+/* Центрируем контент, чтобы он не прилипал к краям */
 .case-page .dark-section-full > .container,
 .case-page .dark-section-full > .wrap, 
 .case-page .dark-section-full > .case-wrap {
@@ -637,7 +634,10 @@ footer a:hover { text-decoration: underline; }
 /* ВСЕ заголовки внутри блока (h2, h3, h4) — БЕЛЫЕ */
 .case-page .dark-section-full h2,
 .case-page .dark-section-full h3,
-.case-page .dark-section-full h4 {
+.case-page .dark-section-full h4,
+.case-page .dark-section-full strong,
+.case-page .dark-section-full .card-title,
+.case-page .dark-section-full .pillar-title {
   color: #ffffff !important;
 }
 
@@ -651,9 +651,25 @@ footer a:hover { text-decoration: underline; }
 .case-page .dark-section-full .role-card,
 .case-page .dark-section-full .pillar,
 .case-page .dark-section-full .card {
-  background: #2a2a2d !important;
+  background: #2a2a2d !important; /* Темно-серый фон */
   border-radius: 20px !important;
   padding: 32px !important;
+}
+/* 6. Красим текст ВНУТРИ карточек */
+/* Заголовки внутри карточек — белые */
+.case-page .dark-section-full .role-card h3,
+.case-page .dark-section-full .role-card h4,
+.case-page .dark-section-full .pillar h3,
+.case-page .dark-section-full .pillar h4,
+.case-page .dark-section-full .card h3,
+.case-page .dark-section-full .card h4 {
+  color: #ffffff !important;
+}
+/* Текст внутри карточек — серый */
+.case-page .dark-section-full .role-card p,
+.case-page .dark-section-full .pillar p,
+.case-page .dark-section-full .card p {
+  color: #a1a1a6 !important;
 }
 
 /* Адаптив для этого блока */
@@ -664,6 +680,15 @@ footer a:hover { text-decoration: underline; }
   .case-page .dark-section-full .role-grid,
   .case-page .dark-section-full .pillars {
     grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 768px) {
+  .case-page .case-nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .case-page .case-nav a {
+    justify-content: center !important;
   }
 }
 
