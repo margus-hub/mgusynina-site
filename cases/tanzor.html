@@ -13,24 +13,29 @@
 
 <style>
   /* ============================================================
-     ОСНОВНЫЕ СТИЛИ ДЛЯ КЕЙСА (изолируем ширину)
+     БАЗОВЫЕ СТИЛИ И СЕТКИ ДЛЯ КЕЙСА
      ============================================================ */
   .case-wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; }
   
-  /* Сетки и карточки (оставил ваши стили) */
+  /* Убираем гигантские отступы у первого экрана */
+  .case-page .hero { padding-top: 40px !important; padding-bottom: 40px !important; }
+
+  /* Сетки */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin-bottom: 60px; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
   .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+
+  /* Карточки */
   .card { background: var(--bg-soft); border-radius: 22px; padding: 32px; display: flex; flex-direction: column; }
   .card-num { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
   .card-num.text-accent { font-size: 24px; font-weight: 700; color: var(--accent); }
-  .card h3 { font-size: 18px; margin-bottom: 12px; }
+  .card h3 { font-size: 18px; margin-bottom: 12px; color: var(--ink); }
   .card p { font-size: 15px; color: var(--muted); line-height: 1.5; margin: 0; }
 
   /* Панель метрик */
   .metric-panel { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center; background: var(--bg-soft); border-radius: 22px; padding: 32px; margin-bottom: 60px; }
   .metric-number { color: var(--accent); font-size: 28px; font-weight: 700; line-height: 1.1; }
-  .metric-title { font-size: 18px; font-weight: 600; margin-top: 12px; }
+  .metric-title { font-size: 18px; font-weight: 600; margin-top: 12px; color: var(--ink); }
   .metric-note { font-size: 14px; color: var(--muted); margin-top: 8px; }
   .metric-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .compare-box { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px; }
@@ -43,64 +48,90 @@
   .gallery-item img { width: 100%; height: 150px; object-fit: cover; border-radius: 16px; border: 1px solid var(--line); }
   .gallery-caption { font-size: 13px; color: var(--muted); margin-top: 12px; text-align: center; }
 
-  /* Блоки с картинками */
-  .tanzor-feature { margin-top: 60px; }
-  .tanzor-feature img { width: 100%; border-radius: 16px; border: 1px solid var(--line); height: 100%; object-fit: cover; }
-  .tanzor-link { display: inline-block; margin-top: 16px; color: var(--accent); text-decoration: underline; font-weight: 500; }
+  /* Плашки (возвращены стили для "Бизнес-результата" и "Моей задачи") */
   .tanzor-callout { background: var(--bg-soft); border-radius: 16px; padding: 24px; margin-top: 24px; border: 1px solid var(--line); }
   .tanzor-callout strong { display: block; font-size: 16px; margin-bottom: 8px; color: var(--ink); }
-  .tanzor-callout p { font-size: 15px; color: var(--muted); margin: 0; }
+  .tanzor-callout p { font-size: 15px; color: var(--muted); margin: 0; line-height: 1.6; }
+  .tanzor-link { display: inline-block; margin-top: 16px; color: var(--accent); text-decoration: underline; font-weight: 500; }
+
+  /* Сетка для карточек в темной секции */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
 
   /* ============================================================
      ФИКС ДЛЯ ТЕМНОЙ СЕКЦИИ (100% ШИРИНА)
      ============================================================ */
   .case-page .dark-section-full {
-    background-color: #1d1d1f !important; /* Черный фон */
+    background-color: #1d1d1f !important;
     color: #ffffff !important;
     width: 100% !important;
-    padding: 80px 0 !important; /* Отступы сверху/снизу */
+    padding: 80px 0 !important;
     margin: 0 !important;
     border-radius: 0 !important;
   }
-
-  /* Центрируем контент внутри темной секции */
   .case-page .dark-section-full > .case-wrap {
     max-width: 1120px !important;
     margin: 0 auto !important;
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
-
-  /* Цвета текста в темной секции */
   .case-page .dark-section-full h2,
   .case-page .dark-section-full h3 { color: #ffffff !important; }
-  
   .case-page .dark-section-full .lead-dark,
   .case-page .dark-section-full p { color: #a1a1a6 !important; }
-  
   .case-page .dark-section-full .eyebrow { color: var(--accent) !important; }
-
-  /* Карточки внутри темной секции */
-  .case-page .dark-section-full .pillar {
-    background-color: #2a2a2d !important;
-    border-radius: 22px !important;
-    padding: 32px 28px !important;
-  }
+  .case-page .dark-section-full .pillar { background-color: #2a2a2d !important; border-radius: 22px !important; padding: 32px 28px !important; }
   .case-page .dark-section-full .pillar h3 { color: #ffffff !important; }
   .case-page .dark-section-full .pillar p { color: #c8c5bf !important; }
 
-  /* Сетка для карточек в темной секции */
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+  /* ============================================================
+     НАВИГАЦИЯ И ОТСТУПЫ (ИСПРАВЛЕНИЕ)
+     ============================================================ */
+  
+  /* Отступы */
+  .spacer-60 { height: 60px; } 
+  .spacer-before-dark { height: 80px; } 
 
-  /* Навигация и CTA */
+  /* Навигация между кейсами */
   .case-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 60px; padding-top: 32px; border-top: 1px solid var(--line); }
-  .case-nav a { font-size: 15px; font-weight: 600; color: var(--ink); text-decoration: none; }
-  .case-nav a:hover { color: var(--accent); }
-  .case-nav .all-cases { color: var(--muted); font-weight: 500; }
+  
+  .case-nav a { 
+    display: inline-flex; 
+    align-items: center; 
+    padding: 12px 24px; 
+    background: var(--bg-soft); 
+    border-radius: 99px; 
+    font-size: 15px; 
+    font-weight: 600; 
+    color: var(--ink); 
+    text-decoration: none; 
+    transition: all 0.2s ease;
+  }
+  
+  /* Фикс цвета текста при наведении на стрелки */
+  .case-nav a:hover { 
+    background: var(--accent); 
+    color: #ffffff !important; /* Текст становится белым */
+    transform: translateY(-2px);
+  }
+  
+  /* Кнопка "Все кейсы" по центру */
+  .case-nav a.all-cases { 
+    background: transparent; 
+    color: var(--muted); 
+    font-weight: 500;
+  }
+  .case-nav a.all-cases:hover { 
+    background: transparent; 
+    color: var(--accent); 
+    transform: none; 
+  }
+
+  /* CTA */
   .cta-banner { background: #1d1d1f; color: white; border-radius: 22px; padding: 64px 32px; text-align: center; max-width: 1120px; margin: 0 auto; }
   .cta-banner h2 { color: white; margin-bottom: 16px; }
   .cta-banner p { color: #a1a1a6; font-size: 18px; margin-bottom: 32px; }
   .cta-banner .btn-primary { background: white; color: #1d1d1f; padding: 14px 32px; border-radius: 99px; text-decoration: none; font-weight: 600; display: inline-block; }
+  
   footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 13px; text-align: center; margin-top: 60px; }
 
   @media (max-width: 900px) {
@@ -110,7 +141,6 @@
 </style>
 </head>
 
-<!-- ВАЖНО: Добавляем класс case-page к body -->
 <body class="case-page">
 
 <header>
@@ -128,13 +158,11 @@
   </div>
 </header>
 
-<!-- ВАЖНО: Убрали класс case-wrap с main -->
 <main>
-
-  <!-- Оборачиваем каждый блок в case-wrap для центрирования -->
+  <!-- Одна обертка для всего белого контента -->
   <div class="case-wrap">
     
-    <div class="hero" style="padding-top: 60px;">
+    <div class="hero">
       <div class="eyebrow">Танзор · 2020-2021 · Промышленный B2B</div>
       <h1>Промышленный маркетинг: цифровая стратегия, продукты и производство</h1>
       <p class="lead">Комплексная работа над маркетингом производителя материалов для полиграфической отрасли: создание цифровой площадки, продвижение специализированной продукции, развитие экспертного контента и презентация новых производственных возможностей.</p>
@@ -343,10 +371,12 @@
     </section>
 
   </div> <!-- Закрываем case-wrap -->
+</main> <!-- Закрываем main -->
 
-</main> <!-- Закрываем main ЗДЕСЬ -->
+<!-- ОТСТУП ПЕРЕД ТЕМНОЙ СЕКЦИЕЙ (МОЯ РОЛЬ) -->
+<div class="spacer-before-dark"></div>
 
-<!-- ВАЖНО: Темная секция вынесена ЗА ПРЕДЕЛЫ main, чтобы быть на всю ширину -->
+<!-- Темная секция вынесена наружу для 100% ширины -->
 <section class="dark-section-full">
   <div class="case-wrap">
     <div class="eyebrow eyebrow-dark">04 · Моя роль</div>
@@ -372,7 +402,7 @@
 </section>
 
 <!-- Навигация между кейсами -->
-<section>
+<section style="padding: 0;">
   <div class="case-wrap">
     <nav class="case-nav">
       <a href="klyuchavto.html" class="case-nav-prev">← Предыдущий</a>
@@ -382,7 +412,10 @@
   </div>
 </section>
 
-<!-- Блок CTA -->
+<!-- ОТСТУП ПЕРЕД CTA -->
+<div class="spacer-60"></div>
+
+<!-- CTA -->
 <section class="case-wrap" style="padding-bottom: 60px;">
   <div class="cta-banner">
     <h2>Обсудим задачу?</h2>
