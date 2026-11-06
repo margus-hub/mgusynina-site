@@ -73,6 +73,50 @@
 
   footer { border-top: 1px solid var(--line); padding: 32px 0; color: var(--muted); font-size: 13px; text-align: center; margin-top: 60px; }
 
+    /* --- ЖЕСТКИЙ ФИКС ДЛЯ БЛОКА "МОЯ РОЛЬ" --- */
+  .dark-section-full {
+    background-color: #1d1d1f !important;
+    color: #ffffff !important;
+    width: 100vw !important;
+    max-width: 100% !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    border-radius: 0 !important;
+    padding: 80px 0 !important;
+  }
+
+  .dark-section-full h2 {
+    color: #ffffff !important;
+    font-size: clamp(32px, 4vw, 48px) !important;
+    margin-bottom: 24px !important;
+  }
+
+  .dark-section-full h3 {
+    color: #ffffff !important;
+  }
+
+  .dark-section-full p {
+    color: #a1a1a6 !important;
+  }
+
+  .dark-section-full .eyebrow,
+  .dark-section-full .eyebrow-dark {
+    color: var(--accent) !important; 
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+  }
+
+  .dark-section-full .pillar {
+    background-color: #2a2a2d !important;
+    border-radius: 20px !important;
+    padding: 32px !important;
+  }
+  
+  .dark-section-full .pillar p {
+    color: #a1a1a6 !important;
+  }
+  
   @media (max-width: 900px) {
     .grid-2, .grid-3, .grid-4, .gallery, .metric-panel, .pillars { grid-template-columns: 1fr; }
     .grid-2 { gap: 24px; }
