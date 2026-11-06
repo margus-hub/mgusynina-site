@@ -513,6 +513,35 @@ footer a:hover { text-decoration: underline; }
 .case-page .dark-section-full .pillar p {
   color: #c8c5bf !important;
 }
+/* ============================================================
+   ФИНАЛЬНЫЕ ПРАВКИ: ОТСТУП, ЛИНИЯ И КНОПКА
+   ============================================================ */
+
+/* 1. Отлепляем черный блок от верхних карточек */
+.case-page .dark-section-full {
+  margin-top: 60px !important; /* Добавили отступ сверху */
+  margin-bottom: 60px !important; /* И снизу, чтобы не липло к низу */
+}
+
+/* 2. Убираем черту перед меню навигации */
+.case-page .case-nav {
+  border-top: none !important; /* Убираем линию */
+  padding-top: 0 !important;   /* Убираем отступ, который был под линию */
+  margin-top: 20px !important; /* Оставляем аккуратный воздух */
+}
+
+/* 3. Делаем текст на кнопках белым при наведении */
+.case-page .case-nav a:hover {
+  background-color: var(--accent) !important; /* Синий фон */
+  color: #ffffff !important;                  /* БЕЛЫЙ текст */
+  transform: translateY(-2px);
+}
+
+/* Для центральной кнопки "Все кейсы" оставляем прозрачный фон, чтобы она не заливалась синим */
+.case-page .case-nav a:nth-child(2):hover {
+  background-color: transparent !important;
+  color: var(--accent) !important;
+}
 
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
