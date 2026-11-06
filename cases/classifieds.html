@@ -217,7 +217,14 @@
     .case-page h3 {
       color: var(--text) !important;
     }
-
+    /* В темных блоках заголовки — БЕЛЫЕ */
+    .case-page .dark-section-full h2,
+    .case-page .dark-section-full h3,
+    .case-page .dark-section h2,
+    .case-page .dark-section h3,
+    .case-page .classifieds-result h2 {
+      color: #ffffff !important;
+    }
     /* 2. Убираем гигантские отступы между секциями */
     /* Перебиваем глобальные 100px из style.css для этой страницы */
     .case-page .container {
