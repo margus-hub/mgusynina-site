@@ -467,6 +467,7 @@ footer a:hover { text-decoration: underline; }
 
 /* 1. Задаем черный фон на всю ширину экрана */
 .case-page .dark-section-full {
+  background-color: #1d1d1f !important;
   width: 100vw !important;
   max-width: 100% !important;
   margin-left: calc(-50vw + 50%) !important;
