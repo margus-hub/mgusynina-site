@@ -426,7 +426,7 @@ main.case-page.container-wide {
 /* Убираем лишний отступ у секции перед темной */
 .case-page .section-block:has(+ .section-dark) { 
   margin-bottom: 0;
-
+}
 /* 9. Тёмная секция (Моя роль) — В КАРТОЧКЕ, БЕЗ РАСТЯГИВАНИЯ */
 .case-page .section-dark,
 .case-page .section-block.section-dark { 
