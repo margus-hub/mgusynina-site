@@ -513,6 +513,112 @@ footer a:hover { text-decoration: underline; }
   color: #c8c5bf !important;
 }
 
+/* ============================================================
+   Универсальные блоки для case-страниц (ROX, klyuchavto и др.)
+   ============================================================ */
+
+/* Заголовок секции с eyebrow + h2 + лид */
+.case-page .section-block .section-header {
+  max-width: 780px;
+  margin-bottom: 32px;
+}
+.case-page .section-block .section-header h2 {
+  margin-bottom: 16px;
+}
+.case-page .section-block .section-header .eyebrow {
+  display: block;
+  margin-bottom: 12px;
+}
+.case-page .section-block .section-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin: 0;
+  max-width: 720px;
+}
+
+/* Отступ между секциями внутри case-page */
+.case-page > .section-block + .section-block {
+  margin-top: 56px;
+}
+.case-page > .metric-panel + .section-block,
+.case-page > .section-block + .section-dark,
+.case-page > .section-dark + .section-block {
+  margin-top: 56px;
+}
+
+/* Галерея с подписями в .gallery (не ломает существующую сетку img) */
+.case-page .gallery {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+.case-page .gallery .gallery-item img {
+  height: 220px;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.case-page .gallery .gallery-caption {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Тёмная секция внутри case-page: убираем расчёт -50vw, работаем через container-wide */
+.case-page .section-block.section-dark {
+  background: var(--bg-dark);
+  color: #fff;
+  border-radius: 0;
+  padding: 80px 0;
+  margin: 80px 0;
+  width: 100%;
+}
+.case-page .section-block.section-dark > .container-wide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.case-page .section-block.section-dark .pillar {
+  background: #2a2a2d;
+}
+.case-page .section-block.section-dark .pillar h3 { color: #fff; }
+.case-page .section-block.section-dark .pillar p { color: #c8c5bf; }
+
+/* CTA-баннер внутри case-page — без отрицательных отступов */
+.case-page .cta-banner {
+  margin-top: 56px;
+  margin-bottom: 0;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .case-page > .section-block + .section-block,
+  .case-page > .metric-panel + .section-block,
+  .case-page > .section-block + .section-dark,
+  .case-page > .section-dark + .section-block {
+    margin-top: 40px;
+  }
+  .case-page .section-block.section-dark {
+    padding: 56px 0;
+    margin: 56px 0;
+  }
+  .case-page .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .case-page .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+/* Fallback: если JS не сработал через 3s — показать */
+.reveal { opacity: 0; transform: translateY(20px); transition: all .9s var(--ease); }
+.reveal.no-js { opacity: 1; transform: none; }
+
 @media (max-width: 900px) {
   .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
   .case-page .process-step:not(:last-child)::after { display: none; }
