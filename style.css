@@ -86,23 +86,8 @@ header {
 
 /* ===== HERO ===== */
 .hero { padding: 100px 24px 80px; max-width: var(--max); margin: 0 auto; }
-.hero-inner {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 64px;
-  align-items: center;
-  margin-bottom: 48px;
-  text-align: left;
-}
-.hero-photo img {
-  width: 350px;
-  height: 450px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: var(--radius-lg);
-  display: block;
-  background: var(--bg-soft);
-}
+.hero-inner { display: grid; grid-template-columns: 350px 1fr; gap: 64px; align-items: center; margin-bottom: 48px; text-align: left; }
+.hero-photo img { width: 350px; height: 450px; object-fit: cover; object-position: center top; border-radius: var(--radius-lg); display: block; background: var(--bg-soft); }
 .hero-content { max-width: 100%; }
 .hero-tagline { font-size: 13px; letter-spacing: -0.01em; color: var(--muted); margin-bottom: 24px; }
 .hero h1 { margin-bottom: 24px; letter-spacing: -0.03em; font-size: clamp(48px, 6vw, 80px); }
@@ -112,26 +97,13 @@ header {
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start; }
 
 /* ===== STATS ===== */
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 48px;
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;margin-top: 48px;
   /* Убрали max-width: 1000px, чтобы они растянулись на всю ширину контейнера */
 }
 .stat { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 40px 32px; transition: transform .3s var(--ease); }
 .section-soft .stat { background: #ffffff; }
 .stat:hover { transform: translateY(-4px); }
-.stat .num {
-  font-size: clamp(36px, 4.5vw, 56px);
-  font-weight: 600;
-  color: var(--text);
-  letter-spacing: -0.035em;
-  line-height: 1.1;
-  margin-bottom: 10px;
-  white-space: normal;
-  word-break: break-word;
-}
+.stat .num { font-size: clamp(36px, 4.5vw, 56px); font-weight: 600; color: var(--text); letter-spacing: -0.035em; line-height: 1.1; margin-bottom: 10px; white-space: normal; word-break: break-word; }
 .stat .num.accent { color: var(--accent); }
 .stat .label { font-size: 16px; color: var(--muted); line-height: 1.45; }
 
@@ -387,34 +359,43 @@ footer a:hover { text-decoration: underline; }
   .pillars { grid-template-columns: 1fr; }
   .cases-grid { grid-template-columns: 1fr; }
 }
-
 /* ============================================================
-   ===== VYSTAVKI CUSTOM STYLES — изолированы через .case-page ====
+   ===== ЕДИНЫЙ БЛОК СТИЛЕЙ ДЛЯ ВСЕХ 10 КЕЙСОВ (CASE PAGE) =====
    ============================================================ */
 
 .case-page { padding-top: 40px; }
-.case-page .case-hero { max-width: 940px; margin-bottom: 40px; }
-.case-page .case-hero > .body-copy { margin-top: 18px; font-size: 17px; color: var(--text-soft); line-height: 1.7; }
-
-.case-page .metric-panel {
-  display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center;
-  background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-lg);
-  padding: 32px; margin: 32px 0;
+.case-page > .container-wide, 
+main.case-page.container-wide { 
+  padding-top: 40px; 
+  padding-bottom: 100px; 
 }
+
+/* 1. Hero (Верхний блок) */
+.case-page .case-hero { max-width: 940px; margin-bottom: 48px; }
+.case-page .case-hero h1 { font-size: clamp(32px, 5vw, 56px); line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 24px; max-width: 900px; }
+.case-page .case-hero .lead { font-size: clamp(18px, 2vw, 22px); color: var(--muted); margin-bottom: 32px; max-width: 800px; }
+.case-page .case-hero .body-copy { margin-top: 18px; font-size: 17px; color: var(--text-soft); line-height: 1.7; max-width: 800px; }
+
+/* 2. Metric Panel (Блок с цифрами) */
+.case-page .metric-panel { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; align-items: center; background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px; margin: 32px 0; }
 .case-page .metric-number { color: var(--accent); font-size: 34px; font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; }
 .case-page .metric-title { font-size: 20px; color: var(--text); font-weight: 600; line-height: 1.3; margin-top: 16px; }
 .case-page .metric-note { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 10px 0 0; }
-
 .case-page .metric-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .case-page .compare-box { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
 .case-page .compare-box .small { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-.case-page .compare-box .big { font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -.03em; margin-bottom: 4px; }
-.case-page .compare-box.highlight { border-color: rgba(48,100,220,.3); box-shadow: 0 8px 24px rgba(30,70,130,.08); }
+.case-page .compare-box .big { font-size: clamp(32px, 4vw, 48px); font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -0.03em; margin-bottom: 4px; }
+.case-page .compare-box.highlight { border-color: rgba(48, 100, 220, .3); box-shadow: 0 8px 24px rgba(30, 70, 130, .08); }
 .case-page .compare-box.highlight .big { color: var(--accent); }
 
-.case-page .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; border-radius: var(--radius); background: var(--bg-soft); }
-.case-page .gallery-caption { font-size: 13px; color: var(--muted); margin-top: 10px; }
+/* 3. Секции и типографика */
+.case-page .section-block { padding: 0; margin-bottom: 56px; }
+.case-page .section-block > .eyebrow { margin-bottom: 12px; display: block; }
+.case-page .section-block h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 24px; max-width: 780px; }
+.case-page .section-intro { font-size: 17px; line-height: 1.7; color: var(--text-soft); max-width: 780px; margin: 0 0 24px; }
+.case-page .body-copy { font-size: 17px; line-height: 1.7; color: var(--text-soft); max-width: 900px; margin: 0 0 16px; }
 
+/* 4. Сетка карточек */
 .case-page .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 24px; }
 .case-page .card { background: var(--bg-soft); border-radius: var(--radius-lg); padding: 32px 28px; transition: transform .3s var(--ease); }
 .case-page .card:hover { transform: translateY(-4px); }
@@ -422,9 +403,8 @@ footer a:hover { text-decoration: underline; }
 .case-page .card-num.text-accent { font-size: clamp(28px, 3vw, 36px); font-weight: 700; letter-spacing: -0.03em; text-transform: none; }
 .case-page .card h3 { font-size: 20px; margin-bottom: 12px; line-height: 1.2; color: var(--text); }
 .case-page .card p { font-size: 15px; color: var(--text-soft); line-height: 1.55; margin: 0; }
-.case-page .card-list { padding-left: 20px; color: var(--text-soft); font-size: 14px; line-height: 1.5; margin-top: 12px; }
-.case-page .card-list li { margin-bottom: 6px; }
 
+/* 5. Process Grid (Этапы) */
 .case-page .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 40px 0; }
 .case-page .process-step { position: relative; background: var(--bg-soft); border-radius: var(--radius); padding: 24px 20px; }
 .case-page .process-step .num { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 12px; }
@@ -432,200 +412,82 @@ footer a:hover { text-decoration: underline; }
 .case-page .process-step p { font-size: 13px; color: var(--text-soft); line-height: 1.5; margin: 0; }
 .case-page .process-step:not(:last-child)::after { content: "→"; position: absolute; right: -14px; top: 50%; transform: translate(50%, -50%); color: var(--accent); font-size: 20px; z-index: 2; background: #fff; border-radius: 50%; width: 28px; height: 28px; display: grid; place-items: center; }
 
+/* 6. Quote Panel (Цитата) */
 .case-page .quote-panel { margin-top: 40px; background: var(--bg-dark); color: #fff; border-radius: var(--radius-lg); padding: 48px; display: block; }
 .case-page .quote-panel p { margin: 0; }
 .case-page .quote-panel strong { display: inline; color: #fff !important; font-size: clamp(20px, 2.5vw, 28px); line-height: 1.5; font-weight: 500; text-align: left; }
 
-.case-page .section-block > h2 { font-size: clamp(32px, 4.5vw, 48px); line-height: 1.15; margin-bottom: 24px; letter-spacing: -0.03em; }
-.case-page .section-block.section-dark {
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding-left: calc(50vw - 50%);
-  padding-right: calc(50vw - 50%);
-  padding-top: 80px;
-  padding-bottom: 80px;
-  margin-top: 80px;
+/* 7. Текстовый блок (h4 + p) */
+.case-page .case-text { margin-top: 32px; padding-top: 32px; border-top: 1px solid rgba(0, 0, 0, 0.08); }
+.case-page .case-text h4 { font-size: 12px; font-weight: 600; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin: 32px 0 16px; }
+.case-page .case-text h4:first-child { margin-top: 0; }
+.case-page .case-text p { font-size: 15px; line-height: 1.65; color: var(--text-soft); margin: 0 0 14px; }
+.case-page .case-text p:last-child { margin-bottom: 0; }
+
+/* 8. Галерея (работает и с img, и с figure) */
+.case-page .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+.case-page .gallery-item { margin: 0; padding: 0; }
+.case-page .gallery-item img,
+.case-page .gallery img { width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); display: block; cursor: pointer; transition: transform .3s var(--ease); }
+.case-page .gallery img:hover,
+.case-page .gallery-item img:hover { transform: scale(1.02); }
+.case-page .gallery-caption { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
+
+/* 9. Тёмная секция (Моя роль) — В КАРТОЧКЕ, БЕЗ РАСТЯГИВАНИЯ */
+.case-page .section-dark,
+.case-page .section-block.section-dark { 
+  background: var(--bg-dark); 
+  color: #fff; 
+  border-radius: var(--radius-lg); 
+  padding: 56px 48px; 
+  margin: 56px 0 0 0; 
+  width: auto; /* Отменяем растягивание */
 }
+.case-page .section-dark .eyebrow-dark { color: var(--accent); display: block; margin-bottom: 12px; }
+.case-page .section-dark .h2-dark { color: #fff; margin-bottom: 24px; }
+.case-page .section-dark .lead-dark { color: rgba(255,255,255,0.7); font-size: 19px; line-height: 1.6; max-width: 800px; margin-bottom: 32px; }
+
+/* Карточки внутри тёмной секции */
+.case-page .section-dark .pillar { background: #2a2a2d; border-radius: var(--radius); padding: 32px 28px; }
+.case-page .section-dark .pillar h3 { color: #fff; font-size: 20px; margin-bottom: 12px; }
+.case-page .section-dark .pillar p { color: #c8c5bf; font-size: 15px; margin: 0; line-height: 1.55; }
 .case-page .section-dark .card { background: #2a2a2d; }
 .case-page .section-dark .card h3 { color: #fff; }
 .case-page .section-dark .card p { color: #c8c5bf; }
 
-.case-page .integration {
-  margin-top: 16px;
-  border-radius: 16px;
-  padding: 20px 24px;
-  background: #e0eaf7;
-  color: #25466f;
-  font-size: 15px;
-}
+/* 10. Навигация и ссылки */
+.case-page .case-nav { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 48px; padding-top: 32px; flex-wrap: wrap; }
+.case-page .case-nav a { display: inline-flex; align-items: center; padding: 12px 24px; background: var(--bg-soft); border-radius: 980px; font-size: 15px; font-weight: 500; color: var(--text); transition: all .2s var(--ease); }
+.case-page .case-nav a:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+.case-page .case-nav a:nth-child(2) { margin: 0 auto; background: transparent; color: var(--muted); padding: 12px 16px; }
+.case-page .case-nav a:nth-child(2):hover { background: transparent; color: var(--accent); transform: none; }
 
-.case-page .integration strong {
-  color: #1e3c66;
-}
-/* ============================================================
-   ФИКС ДЛЯ БЛОКА "МОЯ РОЛЬ" (Полноширинная темная секция)
-   ============================================================ */
+.case-page .case-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(0, 0, 0, 0.08); }
+.case-page .case-link { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; background: #fff; border: 1px solid var(--line); border-radius: 980px; font-size: 14px; font-weight: 500; color: var(--text); transition: all .2s var(--ease); }
+.case-page .case-link:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* 1. Задаем черный фон на всю ширину экрана (без сложной математики) */
-.case-page .dark-section-full {
-  background-color: #1d1d1f !important;
-  color: #ffffff !important;
-  width: 100% !important;
-  padding: 80px 0 !important; /* Отступы сверху и снизу */
-  border-radius: 0 !important;
-}
+/* 11. CTA Баннер */
+.case-page .cta-banner { margin-top: 56px; margin-bottom: 0; }
 
-/* 2. Центрируем контент внутри (используем case-wrap, который уже есть в HTML) */
-.case-page .dark-section-full > .case-wrap {
-  max-width: 1120px !important;
-  margin: 0 auto !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-}
-
-/* 3. Заголовок (h2) — БЕЛЫЙ */
-.case-page .dark-section-full h2 {
-  color: #ffffff !important;
-}
-
-/* 4. Текст (lead-dark) — СВЕТЛО-СЕРЫЙ */
-.case-page .dark-section-full .lead-dark {
-  color: #a1a1a6 !important;
-}
-
-/* 5. Мелкий лейбл (04 · Моя роль) — СИНИЙ */
-.case-page .dark-section-full .eyebrow {
-  color: var(--accent) !important;
-}
-
-/* 6. Карточки внутри (pillar) — темно-серый фон, белые заголовки */
-.case-page .dark-section-full .pillar {
-  background-color: #2a2a2d !important;
-  border-radius: var(--radius-lg) !important;
-  padding: 32px 28px !important;
-}
-
-.case-page .dark-section-full .pillar h3 {
-  color: #ffffff !important;
-}
-
-.case-page .dark-section-full .pillar p {
-  color: #c8c5bf !important;
-}
-
-/* ============================================================
-   Универсальные блоки для case-страниц (ROX, klyuchavto и др.)
-   ============================================================ */
-
-/* Заголовок секции с eyebrow + h2 + лид */
-.case-page .section-block .section-header {
-  max-width: 780px;
-  margin-bottom: 32px;
-}
-.case-page .section-block .section-header h2 {
-  margin-bottom: 16px;
-}
-.case-page .section-block .section-header .eyebrow {
-  display: block;
-  margin-bottom: 12px;
-}
-.case-page .section-block .section-text {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-soft);
-  margin: 0;
-  max-width: 720px;
-}
-
-/* Отступ между секциями внутри case-page */
-.case-page > .section-block + .section-block {
-  margin-top: 56px;
-}
-.case-page > .metric-panel + .section-block,
-.case-page > .section-block + .section-dark,
-.case-page > .section-dark + .section-block {
-  margin-top: 56px;
-}
-
-/* Галерея с подписями в .gallery (не ломает существующую сетку img) */
-.case-page .gallery {
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 20px;
-}
-.case-page .gallery .gallery-item img {
-  height: 220px;
-  border-radius: var(--radius);
-  cursor: pointer;
-}
-.case-page .gallery .gallery-caption {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-/* Тёмная секция внутри case-page: убираем расчёт -50vw, работаем через container-wide */
-.case-page .section-block.section-dark {
-  background: var(--bg-dark);
-  color: #fff;
-  border-radius: 0;
-  padding: 80px 0;
-  margin: 80px 0;
-  width: 100%;
-}
-.case-page .section-block.section-dark > .container-wide {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-.case-page .section-block.section-dark .pillar {
-  background: #2a2a2d;
-}
-.case-page .section-block.section-dark .pillar h3 { color: #fff; }
-.case-page .section-block.section-dark .pillar p { color: #c8c5bf; }
-
-/* CTA-баннер внутри case-page — без отрицательных отступов */
-.case-page .cta-banner {
-  margin-top: 56px;
-  margin-bottom: 0;
-}
-
-/* Адаптив */
+/* 12. Адаптив для всех новых блоков */
 @media (max-width: 900px) {
-  .case-page > .section-block + .section-block,
-  .case-page > .metric-panel + .section-block,
-  .case-page > .section-block + .section-dark,
-  .case-page > .section-dark + .section-block {
-    margin-top: 40px;
-  }
-  .case-page .section-block.section-dark {
-    padding: 56px 0;
-    margin: 56px 0;
-  }
-  .case-page .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .case-page .gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-/* Fallback: если JS не сработал через 3s — показать */
-.reveal { opacity: 0; transform: translateY(20px); transition: all .9s var(--ease); }
-.reveal.no-js { opacity: 1; transform: none; }
-
-@media (max-width: 900px) {
-  .case-page .grid-3, .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
-  .case-page .process-step:not(:last-child)::after { display: none; }
   .case-page .metric-panel { grid-template-columns: 1fr; }
-  .case-page .section-block.section-dark { padding-left: 24px; padding-right: 24px; margin-left: 0; margin-right: 0; }
+  .case-page .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .case-page .section-block { margin-bottom: 40px; }
+  .case-page .section-dark { padding: 40px 32px; margin-top: 40px; }
+  .case-page .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-page .process-step:not(:last-child)::after { display: none; }
 }
+
 @media (max-width: 600px) {
-  .case-page .grid-3, .case-page .process-grid, .case-page .gallery, .case-page .metric-compare { grid-template-columns: 1fr; }
-  .case-page .quote-panel, .case-page .metric-panel, .case-page .card { padding: 24px; }
+  .case-page .grid-3,
+  .case-page .metric-compare,
+  .case-page .gallery { grid-template-columns: 1fr; }
+  .case-page .gallery-item img,
+  .case-page .gallery img { height: 180px; }
+  .case-page .case-nav { flex-direction: column; align-items: stretch; }
+  .case-page .case-nav a { justify-content: center; }
+  .case-page .section-dark { padding: 32px 24px; }
+  .case-page .quote-panel { padding: 32px 24px; }
+  .case-page .card { padding: 24px; }
 }
