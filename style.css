@@ -423,6 +423,10 @@ main.case-page.container-wide {
 .case-page .gallery-item img:hover { transform: scale(1.02); }
 .case-page .gallery-caption { font-size: 13px; color: var(--muted); margin-top: 10px; line-height: 1.5; }
 
+/* Убираем лишний отступ у секции перед темной */
+.case-page .section-block:has(+ .section-dark) { 
+  margin-bottom: 0;
+
 /* 9. Тёмная секция (Моя роль) — В КАРТОЧКЕ, БЕЗ РАСТЯГИВАНИЯ */
 .case-page .section-dark,
 .case-page .section-block.section-dark { 
