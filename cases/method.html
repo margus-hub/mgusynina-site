@@ -1,55 +1,425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Мтод работы на одном кейсе: как маркетинг влияет на бизнес.">
-  <meta name="theme-color" content="#ffffff">
-  <title>Метод - 5 шагов от диагностики до измерения | Марина Гусынина</title>
-  <link rel="icon" type="image/png" href="../favicon.png">
+  <title>Case 10 - Маркетинговая система | Марина Гусынина</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
+  
+  <style>
+    /* Стили для интерактивного калькулятора */
+    .calc-container {
+      background: var(--bg-soft);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid var(--line);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .calc-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .calc-group label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+    }
+    .calc-group input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: var(--line);
+      border-radius: 3px;
+      outline: none;
+    }
+    .calc-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .calc-group input[type="range"]::-webkit-slider-thumb:hover {
+      transform: scale(1.1);
+    }
+    .calc-results {
+      background: #fff;
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .calc-result-item {
+      margin-bottom: 24px;
+    }
+    .calc-result-item:last-child {
+      margin-bottom: 0;
+    }
+    .calc-result-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .calc-result-value {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+    .calc-result-value.positive { color: #34c759; }
+    .calc-result-value.negative { color: #ff3b30; }
+    
+    /* Стили для сложной таблицы */
+    .table-wrap table th { background: var(--text); color: #fff; }
+    .table-wrap table td { font-size: 15px; }
+
+    /* Стили для схемы */
+    .scheme-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .scheme-step {
+      background: var(--bg-soft);
+      padding: 24px;
+      border-radius: var(--radius);
+      position: relative;
+    }
+    .scheme-step::after {
+      content: '→';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 20px;
+      z-index: 2;
+    }
+    .scheme-step:last-child::after { display: none; }
+    .scheme-step h4 { font-size: 16px; color: var(--accent); margin-bottom: 8px; }
+    .scheme-step p { font-size: 14px; margin: 0; }
+
+    @media (max-width: 900px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .scheme-grid { grid-template-columns: repeat(2, 1fr); }
+      .scheme-step::after { display: none; }
+    }
+    @media (max-width: 600px) {
+      .scheme-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <nav class="nav">
-      <a href="../index.html" class="brand">
-        <img src="../images/logo.png" alt="Марина Гусынина" class="brand-logo">
-        <div class="brand-name">Марина Гусынина</div>
-      </a>
-      <button class="burger" aria-label="Меню">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links">
-        <li><a href="../index.html">Обо мне</a></li>
-        <li><a href="../cases.html" class="active">Кейсы</a></li>
-        <li><a href="../about.html">Опыт</a></li>
-        <li><a href="../contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <nav class="nav">
+    <a href="../index.html" class="brand">
+      <img src="../images/logo.png" alt="Логотип" class="brand-logo">
+      <span class="brand-name">Марина Гусынина</span>
+    </a>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">Обо мне</a></li>
+      <li><a href="../cases.html" class="active">Кейсы</a></li>
+      <li><a href="../index.html#experience">Опыт</a></li>
+      <li><a href="../contacts.html">Контакты</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="container-wide case-page" style="min-height: 60vh; padding-top: 100px; padding-bottom: 100px;">
-    
-    <div class="eyebrow">Case 10 · Метод</div>
-    <h1>Как я работаю: метод на одном кейсе</h1>
-    <p class="lead" style="color: var(--accent); font-weight: 600; font-size: 24px; margin-top: 24px;">
-      Скоро контент появится...
+<main class="container-wide case-page">
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="eyebrow">Case 10 · Финальный проект · 2026</div>
+    <h1>Создание сквозной системы маркетинга: от данных до результата</h1>
+    <p class="lead">
+      Комплексный кейс о том, как объединить разрозненные каналы в единую систему, настроить аналитику и прогнозировать результаты на основе данных.
+    </p>
+    <div class="tags">
+      <span class="tag">Стратегия</span><span class="tag">Аналитика</span><span class="tag">Unit-экономика</span><span class="tag">Управление</span>
+    </div>
+  </section>
+
+  <!-- 01. ЗАДАЧА -->
+  <section class="section-block">
+    <div class="eyebrow">01 · Задача</div>
+    <h2>Связать бизнес-показатели с маркетинговыми активностями</h2>
+    <p class="section-intro">
+      Бизнесу нужна была не просто реклама, а инструмент прогнозирования, который позволяет четко понимать, сколько стоит привлечение клиента и какой возврат приносят инвестиции.
+    </p>
+  </section>
+
+  <!-- 02. ИНТЕРАКТИВНАЯ МОДЕЛЬ (КАЛЬКУЛЯТОР) -->
+  <section class="section-block">
+    <div class="eyebrow">02 · Инструмент управления</div>
+    <h2>Интерактивная модель юнит-экономики</h2>
+    <p class="section-intro">
+      Для оценки эффективности я использовала модель ROMI (Return on Marketing Investment). Попробуйте изменить параметры, чтобы увидеть, как меняется рентабельность.
     </p>
 
-  </main>
+    <div class="calc-container">
+      <div class="calc-grid">
+        <!-- Ввод данных -->
+        <div class="calc-inputs">
+          <div class="calc-group">
+            <label>Средний чек (₽) <span id="val-check">2 500 000</span></label>
+            <input type="range" id="input-check" min="500000" max="5000000" step="100000" value="2500000">
+          </div>
+          <div class="calc-group">
+            <label>Маржинальность (%) <span id="val-margin">15%</span></label>
+            <input type="range" id="input-margin" min="5" max="30" step="1" value="15">
+          </div>
+          <div class="calc-group">
+            <label>Стоимость лида (₽) <span id="val-lead">15 000</span></label>
+            <input type="range" id="input-lead" min="2000" max="40000" step="1000" value="15000">
+          </div>
+          <div class="calc-group">
+            <label>Конверсия лид -> продажа (%) <span id="val-conv">5%</span></label>
+            <input type="range" id="input-conv" min="1" max="20" step="1" value="5">
+          </div>
+        </div>
 
-  <footer class="footer">
-    <div class="wrap">
-      <p>© 2026 Марина Гусынина · <a href="../contacts.html">Связаться</a></p>
+        <!-- Результаты -->
+        <div class="calc-results">
+          <div class="calc-result-item">
+            <div class="calc-result-label">Стоимость привлечения (CAC)</div>
+            <div class="calc-result-value" id="result-cac">300 000 ₽</div>
+          </div>
+          <div class="calc-result-item">
+            <div class="calc-result-label">Прибыль с одной сделки</div>
+            <div class="calc-result-value" id="result-profit">375 000 ₽</div>
+          </div>
+          <div class="calc-result-item">
+            <div class="calc-result-label">Рентабельность (ROMI)</div>
+            <div class="calc-result-value positive" id="result-romi">+25%</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- ВОТ ЭТА СТРОКА ВКЛЮЧАЕТ БУРГЕР-МЕНЮ -->
-  <script src="../script.js"></script>
-  
+  <!-- 03. СХЕМА РАБОТЫ -->
+  <section class="section-block">
+    <div class="eyebrow">03 · Архитектура системы</div>
+    <h2>Как выглядел процесс внедрения</h2>
+    <p class="section-intro">
+      Внедрение системы шло поэтапно — от аудита текущих данных до полной автоматизации отчетности.
+    </p>
+    
+    <div class="scheme-grid">
+      <div class="scheme-step">
+        <h4>01 · Аудит</h4>
+        <p>Сбор данных из CRM, рекламных кабинетов и коллтрекинга.</p>
+      </div>
+      <div class="scheme-step">
+        <h4>02 · Модель</h4>
+        <p>Расчет Unit-экономики и выявление узких мест воронки.</p>
+      </div>
+      <div class="scheme-step">
+        <h4>03 · Внедрение</h4>
+        <p>Настройка сквозной аналитики и дашбордов в реальном времени.</p>
+      </div>
+      <div class="scheme-step">
+        <h4>04 · Контроль</h4>
+        <p>Еженедельные план-факт отчеты и корректировка стратегии.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. СЛОЖНАЯ ТАБЛИЦА -->
+  <section class="section-block">
+    <div class="eyebrow">04 · Результаты по каналам</div>
+    <h2>Сравнение эффективности каналов</h2>
+    <p class="section-intro">
+      На основе модели ROMI были перераспределены бюджеты в пользу наиболее эффективных каналов.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Канал привлечения</th>
+            <th>Бюджет</th>
+            <th>Лиды</th>
+            <th>CPL (Стоимость лида)</th>
+            <th>Продажи</th>
+            <th>ROMI</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Контекстная реклама (Яндекс)</td>
+            <td>1 000 000 ₽</td>
+            <td>150</td>
+            <td>6 666 ₽</td>
+            <td>12</td>
+            <td style="color: #34c759; font-weight: 600;">+120%</td>
+          </tr>
+          <tr>
+            <td>Медийная реклама</td>
+            <td>1 500 000 ₽</td>
+            <td>80</td>
+            <td>18 750 ₽</td>
+            <td>4</td>
+            <td style="color: #ff3b30; font-weight: 600;">-40%</td>
+          </tr>
+          <tr>
+            <td>Классифайды (Avito/Auto.ru)</td>
+            <td>500 000 ₽</td>
+            <td>200</td>
+            <td>2 500 ₽</td>
+            <td>8</td>
+            <td style="color: #34c759; font-weight: 600;">+80%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 05. МОЯ РОЛЬ -->
+  <section class="section-dark">
+    <div class="eyebrow eyebrow-dark">05 · Моя роль</div>
+    <h2 class="h2-dark">Построение системы от идеи до внедрения</h2>
+    <p class="lead-dark">
+      Я выступала как архитектор маркетинговой системы: от сбора первичных данных до презентации дашбордов руководству.
+    </p>
+    <div class="pillars">
+      <article class="pillar">
+        <h3>Аналитика</h3>
+        <p>Настройка сквозной аналитики, дашбордов и отчетов по каналам.</p>
+      </article>
+      <article class="pillar">
+        <h3>Unit-экономика</h3>
+        <p>Расчет ROMI, CAC, LTV и прогнозирование бюджетов.</p>
+      </article>
+      <article class="pillar">
+        <h3>Управление командой</h3>
+        <p>Постановка задач подрядчикам и контроль KPI.</p>
+      </article>
+      <article class="pillar">
+        <h3>Стратегия</h3>
+        <p>Перераспределение бюджетов на основе данных и защита стратегии перед бизнесом.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Продолжить знакомство</h2>
+    <p>Маркетинг - это не только коммуникация с аудиторией, но и создание опыта, который помогает бизнесу выстраивать отношения с клиентами.</p>
+    <a href="../cases.html" class="btn btn-primary">Посмотреть все кейсы ↗</a>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="case-nav" aria-label="Навигация между кейсами">
+    <a href="classifieds.html" class="case-nav-prev">← Предыдущий кейс</a>
+    <a href="../cases.html">Все кейсы</a>
+    <span class="case-nav-next" style="visibility: hidden;"></span>
+  </nav>
+
+</main>
+
+<footer>
+  © 2026 Марина Гусынина · <a href="../contacts.html">Связаться</a>
+</footer>
+
+<script src="../script.js"></script>
+<!-- Скрипт для калькулятора -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const inputs = {
+      check: document.getElementById('input-check'),
+      margin: document.getElementById('input-margin'),
+      lead: document.getElementById('input-lead'),
+      conv: document.getElementById('input-conv')
+    };
+
+    const displays = {
+      check: document.getElementById('val-check'),
+      margin: document.getElementById('val-margin'),
+      lead: document.getElementById('val-lead'),
+      conv: document.getElementById('val-conv')
+    };
+
+    const results = {
+      cac: document.getElementById('result-cac'),
+      profit: document.getElementById('result-profit'),
+      romi: document.getElementById('result-romi')
+    };
+
+    function formatNumber(num) {
+      return new Intl.NumberFormat('ru-RU').format(num);
+    }
+
+    function calculate() {
+      const check = parseInt(inputs.check.value);
+      const margin = parseInt(inputs.margin.value) / 100;
+      const lead = parseInt(inputs.lead.value);
+      const conv = parseInt(inputs.conv.value) / 100;
+
+      // Обновляем лейблы
+      displays.check.textContent = formatNumber(check);
+      displays.margin.textContent = parseInt(inputs.margin.value) + '%';
+      displays.lead.textContent = formatNumber(lead);
+      displays.conv.textContent = parseInt(inputs.conv.value) + '%';
+
+      // Формулы
+      // CAC = Стоимость лида / Конверсия (в долях)
+      const cac = lead / conv; 
+      
+      // Прибыль = Чек * Маржинальность
+      const profit = check * margin;
+      
+      // ROMI = (Прибыль - CAC) / CAC * 100%
+      const romi = ((profit - cac) / cac) * 100;
+
+      // Вывод
+      results.cac.textContent = formatNumber(Math.round(cac)) + ' ₽';
+      results.profit.textContent = formatNumber(Math.round(profit)) + ' ₽';
+      
+      const romiFormatted = (romi > 0 ? '+' : '') + romi.toFixed(1) + '%';
+      results.romi.textContent = romiFormatted;
+
+      // Цвет
+      results.romi.classList.remove('positive', 'negative');
+      if (romi > 0) {
+        results.romi.classList.add('positive');
+      } else {
+        results.romi.classList.add('negative');
+      }
+    }
+
+    // Вешаем событие на все ползунки
+    Object.values(inputs).forEach(input => {
+      input.addEventListener('input', calculate);
+    });
+
+    // Первичный расчет
+    calculate();
+  });
+</script>
+
 </body>
 </html>
